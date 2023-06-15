@@ -10,7 +10,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="active " href="index.html">Beranda</a></li>
+                <li><a href="index.html">Beranda</a></li>
                 <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Visi & Misi</a></li>
@@ -19,7 +19,7 @@
                         <li><a href="#">Struktuk Organisasi</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a class="active" href="#"><span>Kelembagaan</span> <i
+                <li class="dropdown"><a href="#"><span>Kelembagaan</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">PKK</a></li>
@@ -36,7 +36,15 @@
                         <li><a href="#">Pekerjaan</a></li>
                     </ul>
                 </li>
-                <li><a href="blog.html">Pelayanan</a></li>
+                <li class="dropdown"><a href="#"><span>Pelayanan</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Surat Keterangan Kelahiran</a></li>
+                        <li><a href="#">Surat Keterangan Kematian</a></li>
+                        <li><a href="#">Surat Pengantar Pembuatan KTP</a></li>
+                        <li><a href="#">Surat Pengantar Pembuatan KK</a></li>
+                        <li><a href="#">Surat Rekomendasi Izin Kegiatan / Keramaian</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Pengaduan</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
