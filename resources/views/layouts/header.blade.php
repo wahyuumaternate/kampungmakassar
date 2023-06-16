@@ -10,32 +10,33 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
+                <li><a href="{{ url('/') }}">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="{{ url('visi-misi') }}">
+                        <span>Profil</span> <i class="bi bi-chevron-down"></i>
+                    </a>
                     <ul>
-                        <li><a href="#">Visi & Misi</a></li>
-                        <li><a href="#">Sejarah</a></li>
-                        <li><a href="#">Gambaran Umum</a></li>
-                        <li><a href="#">Struktuk Organisasi</a></li>
+                        <li><a href="{{ url('visi-misi') }}">Visi & Misi</a></li>
+                        <li><a href="{{ url('sejarah') }}">Sejarah</a></li>
+                        <li><a href="{{ url('gambaran-umum') }}">Gambaran Umum</a></li>
+                        <li><a href="{{ url('struktur-organisasi') }}">Struktur Organisasi</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Kelembagaan</span> <i
-                            class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="{{ url('pkk') }}"><span>Kelembagaan</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">PKK</a></li>
-                        <li><a href="#">LPM</a></li>
-                        <li><a class="active" href="#">Gambaran Umum</a></li>
+                        <li><a href="{{ url('pkk') }}">PKK</a></li>
+                        <li><a href="{{ url('lpm') }}">LPM</a></li>
                     </ul>
                 </li>
-                <li><a href="portfolio.html">Berita</a></li>
-                <li class="dropdown"><a href="#"><span>Statistik Kelurahan</span> <i
+                <li><a href="{{ url('berita') }}">Berita</a></li>
+                <li class="dropdown"><a href="{{ url('jenis-kelamin') }}"><span>Statistik Kelurahan</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Jenis Kelamin</a></li>
-                        <li><a href="#">Agama</a></li>
-                        <li><a href="#">Pekerjaan</a></li>
-                        <li><a href="#">Pendidkan</a></li>
-                        <li><a href="#">Kelompok Umur</a></li>
+                        <li><a href="{{ url('jenis-kelamin') }}">Jenis Kelamin</a></li>
+                        <li><a href="{{ url('agama') }}">Agama</a></li>
+                        <li><a href="{{ url('pekerjaan') }}">Pekerjaan</a></li>
+                        <li><a href="{{ url('pendidikan') }}">Pendidkan</a></li>
+                        <li><a href="{{ url('kelompok-umur') }}">Kelompok Umur</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Pelayanan</span> <i class="bi bi-chevron-down"></i></a>
