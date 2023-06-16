@@ -22,7 +22,8 @@
                         <li><a href="{{ url('struktur-organisasi') }}">Struktur Organisasi</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="{{ url('pkk') }}"><span>Kelembagaan</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="{{ url('pkk') }}"><span>Kelembagaan</span> <i
+                            class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="{{ url('pkk') }}">PKK</a></li>
                         <li><a href="{{ url('lpm') }}">LPM</a></li>
@@ -39,16 +40,18 @@
                         <li><a href="{{ url('kelompok-umur') }}">Kelompok Umur</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Pelayanan</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="{{ url('surat-keterangan-kelahiran') }}"><span>Pelayanan</span> <i
+                            class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Surat Keterangan Kelahiran</a></li>
-                        <li><a href="#">Surat Keterangan Kematian</a></li>
-                        <li><a href="#">Surat Pengantar Pembuatan KTP</a></li>
-                        <li><a href="#">Surat Pengantar Pembuatan KK</a></li>
-                        <li><a href="#">Surat Rekomendasi Izin Kegiatan / Keramaian</a></li>
+                        <li><a href="{{ url('surat-keterangan-kelahiran') }}">Surat Keterangan Kelahiran</a></li>
+                        <li><a href="{{ url('surat-keterangan-kematian') }}">Surat Keterangan Kematian</a></li>
+                        <li><a href="{{ url('surat-pengantar-pembuatan-ktp') }}">Surat Pengantar Pembuatan KTP</a></li>
+                        <li><a href="{{ url('surat-pengantar-pembuatan-kk') }}">Surat Pengantar Pembuatan KK</a></li>
+                        <li><a href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}">Surat Rekomendasi Izin
+                                Kegiatan / Keramaian</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Pengaduan</a></li>
+                <li><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

@@ -75,6 +75,32 @@ Route::get('/kelompok-umur', function () {
     return view('pages.statistik_kelurahan.kelompok_umur');
 });
 
+// Pelayannan Routes
+Route::get('/surat-keterangan-kelahiran', function () {
+    return view('pages.pelayannan.surat_kelahiran');
+});
+
+Route::get('/surat-keterangan-kematian', function () {
+    return view('pages.pelayannan.surat_kematian');
+});
+
+Route::get('/surat-pengantar-pembuatan-ktp', function () {
+    return view('pages.pelayannan.pembuatan_ktp');
+});
+
+Route::get('/surat-pengantar-pembuatan-kk', function () {
+    return view('pages.pelayannan.pembuatan_kk');
+});
+
+Route::get('/surat-rekomendasi-izin-kegiatan-keramaian', function () {
+    return view('pages.pelayannan.izin_keramaian');
+});
+
+// Pengaduan Routes
+Route::get('/pengaduan', function () {
+    return view('pages.pengaduan.index');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
