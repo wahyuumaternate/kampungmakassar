@@ -12,11 +12,9 @@
 
         <div class="row">
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-                <div class="icon-box icon-box-pink">
-
-                    <lord-icon src="https://cdn.lordicon.com/pqxdilfs.json" trigger="hover"
-                        colors="outline:#131432,primary:#606874,secondary:#e8308c,tertiary:#ebe6ef"
-                        style="width:250px;height:250px">
+                <div class="icon-box icon-box-blue">
+                    <lord-icon src="https://cdn.lordicon.com/zscdqzcc.json" trigger="hover" colors="primary:#107c91"
+                        style="width:190px;height:190px">
                     </lord-icon>
                     <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
@@ -25,9 +23,9 @@
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-box icon-box-cyan">
-                    <lord-icon src="https://cdn.lordicon.com/fihkmkwt.json" trigger="hover"
-                        colors="primary:#121331,secondary:#30e8bd" style="width:250px;height:250px">
+                <div class="icon-box icon-box-blue">
+                    <lord-icon src="https://cdn.lordicon.com/zchxlapl.json" trigger="hover" colors="primary:#107c91"
+                        style="width:190px;height:190px">
                     </lord-icon>
                     <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
                     <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
@@ -36,8 +34,10 @@
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box icon-box-green">
-                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <div class="icon-box icon-box-blue">
+                    <lord-icon src="https://cdn.lordicon.com/nxooksci.json" trigger="hover" colors="primary:#107c91"
+                        style="width:190px;height:190px">
+                    </lord-icon>
                     <h4 class="title"><a href="">Magni Dolores</a></h4>
                     <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                         deserunt mollit anim id est laborum</p>
@@ -46,7 +46,9 @@
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box icon-box-blue">
-                    <div class="icon"><i class="bx bx-world"></i></div>
+                    <lord-icon src="https://cdn.lordicon.com/uvqnvwbl.json" trigger="hover" colors="primary:#107c91"
+                        style="width:190px;height:190px">
+                    </lord-icon>
                     <h4 class="title"><a href="">Nemo Enim</a></h4>
                     <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                         praesentium voluptatum deleniti atque</p>
@@ -78,7 +80,7 @@
                         </form>
                     </div><!-- End sidebar search formn-->
 
-                    
+
 
                     <h3 class="sidebar-title">Sambutan Lurah</h3>
                     <div class="sidebar-item recent-posts">
@@ -312,5 +314,7 @@
     </div>
 </section><!-- End Facts Section -->
 
+{{-- JS --}}
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 @include('layouts.footer')
 @endsection
