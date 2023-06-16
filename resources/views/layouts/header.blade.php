@@ -34,6 +34,8 @@
                         <li><a href="#">Jenis Kelamin</a></li>
                         <li><a href="#">Agama</a></li>
                         <li><a href="#">Pekerjaan</a></li>
+                        <li><a href="#">Pendidkan</a></li>
+                        <li><a href="#">Kelompok Umur</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.html">Pelayanan</a></li>
