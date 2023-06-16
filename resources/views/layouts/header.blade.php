@@ -34,6 +34,8 @@
                         <li><a href="#">Jenis Kelamin</a></li>
                         <li><a href="#">Agama</a></li>
                         <li><a href="#">Pekerjaan</a></li>
+                        <li><a href="#">Pendidkan</a></li>
+                        <li><a href="#">Kelompok Umur</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Pelayanan</span> <i class="bi bi-chevron-down"></i></a>
