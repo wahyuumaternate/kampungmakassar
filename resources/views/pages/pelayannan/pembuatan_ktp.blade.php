@@ -3,7 +3,7 @@
 @section('body')
 @section('outmain')
     @include('layouts.header')
-    @include('layouts.hero')
+    {{-- @include('layouts.hero') --}}
 @endsection
 
 <!-- ======= Surat Pengantar Pembuatan Kartu Tanda Penduduk (KTP) Section ======= -->

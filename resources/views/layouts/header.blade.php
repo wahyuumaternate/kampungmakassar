@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center header-transparent" style="z-index: 9999;">
+<header id="header" class="fixed-top d-flex align-items-center " style="z-index: 9999;">
     <div class="container d-flex justify-content-between align-items-center">
 
         <div class="logo">

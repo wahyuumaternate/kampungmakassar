@@ -3,7 +3,7 @@
 @section('body')
 @section('outmain')
     @include('layouts.header')
-    @include('layouts.hero')
+    {{-- @include('layouts.hero') --}}
 @endsection
 
 <!-- ======= PKK Section ======= -->
