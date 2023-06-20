@@ -19,8 +19,11 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
+// Route::get('/dashboard', function () {
+//     return view('admin.index');
+// })->name('dashboard');
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Profile Routes
