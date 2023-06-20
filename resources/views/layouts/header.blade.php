@@ -10,9 +10,9 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{{ url('/') }}">Beranda</a></li>
+                <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
                 <li class="dropdown">
-                    <a href="{{ url('visi-misi') }}">
+                    <a class="{{ Request::is('visi-misi') ? 'active' : '' }}" href="{{ url('visi-misi') }}">
                         <span>Profil</span> <i class="bi bi-chevron-down"></i>
                     </a>
                     <ul>
