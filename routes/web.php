@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +20,22 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('admin.index');
-// })->name('dashboard');
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// dashboard
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    
+    //berita
+    Route::get('/berita/semua-berita', [BeritaController::class,'index'])->middleware(['auth'])->name('berita.index');
+    Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->middleware(['auth'])->name('berita.tambah');
+    Route::post('/berita/tambah-berita/store', [BeritaController::class,'store'])->middleware(['auth'])->name('berita.store');
+});
+
+
+Route::prefix('profil')->group(function () {
+    
+});
 
 // Profile Routes
 Route::get('/visi-misi', function () {
@@ -51,6 +62,7 @@ Route::get('/pkk', function () {
 Route::get('/lpm', function () {
     return view('pages.kelembagaan.lpm');
 });
+
 
 // Berita Routes
 Route::get('/berita', function () {
