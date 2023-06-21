@@ -29,7 +29,6 @@
                         <li><a href="{{ url('lpm') }}">LPM</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ url('berita') }}">Berita</a></li>
                 <li class="dropdown"><a href="{{ url('jenis-kelamin') }}"><span>Statistik Kelurahan</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -51,6 +50,7 @@
                                 Kegiatan / Keramaian</a></li>
                     </ul>
                 </li>
+                <li><a href="{{ url('berita') }}">Berita</a></li>
                 <li><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

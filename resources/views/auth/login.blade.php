@@ -65,10 +65,10 @@
                     <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Password"
                         required="" name="password">
                 </div>
-                <div class="checkbox mb-3">
+                {{-- <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" name="remember"> Stay logged in </label>
-                </div>
+                </div> --}}
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Let me in</button>
                 <p class="mt-5 mb-3 text-muted">© 2020</p>
             </form>

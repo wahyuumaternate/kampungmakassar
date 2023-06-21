@@ -19,17 +19,81 @@
         </li>
       </ul>
       <p class="text-muted nav-heading mt-4 mb-1">
-        <span>Components</span>
+        <span>Pages</span>
       </p>
       <ul class="navbar-nav flex-fill w-100 mb-2">
         <li class="nav-item dropdown">
-          <a href="#ui-elements" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+          <a href="#berita" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
             <i class="fe fe-grid fe-16"></i>
             <span class="ml-3 item-text">Berita</span>
           </a>
-          <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
+          <ul class="collapse list-unstyled pl-4 w-100" id="berita">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Semua Berita</span></a>
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Semua Berita</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-fill w-100 mb-2">
+        <li class="nav-item dropdown">
+          <a href="#pengaduan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <i class="fe fe-mail fe-16"></i>
+            <span class="ml-3 item-text">Pengaduan</span>
+          </a>
+          <ul class="collapse list-unstyled pl-4 w-100" id="pengaduan">
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Semua Pengaduan</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-fill w-100 mb-2">
+        <li class="nav-item active dropdown">
+          <a href="#profil-kelurahan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <i class="fe fe-book fe-16"></i>
+            <span class="ml-3 item-text">Profil Kelurahan</span>
+          </a>
+          <ul class="collapse list-unstyled pl-4 w-100" id="profil-kelurahan">
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Visi & Misi</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Sejarah</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Gambaran Umum</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Struktur Organisasi</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-fill w-100 mb-2">
+        <li class="nav-item active dropdown">
+          <a href="#kelembagaan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <i class="fe fe-users fe-16"></i>
+            <span class="ml-3 item-text">Kelembagaan</span>
+          </a>
+          <ul class="collapse list-unstyled pl-4 w-100" id="kelembagaan">
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">PKK</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">LPM</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-fill w-100 mb-2">
+        <li class="nav-item active dropdown">
+          <a href="#pelayanan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <i class="fe fe-file-text fe-16"></i>
+            <span class="ml-3 item-text">Pelayanan</span>
+          </a>
+          <ul class="collapse list-unstyled pl-4 w-100" id="pelayanan">
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat Keterangan</span></a>
             </li>
           </ul>
         </li>
@@ -41,11 +105,11 @@
         <li class="nav-item w-100">
           <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fe fe-user fe-16"></i>
-            <span class="ml-3 item-text">Profile</span>
+            <span class="ml-3 item-text">User</span>
           </a>
         </li>
         <li class="nav-item w-100">
-          <form method="POST" action="{{ route('logout') }}"">
+          <form method="POST" action="{{ route('logout') }}">
             @csrf
             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
             this.closest('form').submit();">
