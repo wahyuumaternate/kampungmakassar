@@ -95,6 +95,9 @@
             <li class="nav-item">
               <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat Keterangan</span></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat Keterangan Kematian</span></a>
+            </li>
           </ul>
         </li>
       </ul>
