@@ -12,14 +12,14 @@
             <ul>
                 <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
                 <li class="dropdown">
-                    <a class="{{ Request::is('visi-misi') ? 'active' : '' }}" href="{{ url('visi-misi') }}">
+                    <a class="{{ Request::is('visi-misi') ? 'active' : '' }}" href="{{ route('visimisi') }}">
                         <span>Profil</span> <i class="bi bi-chevron-down"></i>
                     </a>
                     <ul>
-                        <li><a href="{{ url('visi-misi') }}">Visi & Misi</a></li>
-                        <li><a href="{{ url('sejarah') }}">Sejarah</a></li>
-                        <li><a href="{{ url('gambaran-umum') }}">Gambaran Umum</a></li>
-                        <li><a href="{{ url('struktur-organisasi') }}">Struktur Organisasi</a></li>
+                        <li><a href="{{ route('visimisi') }}">Visi & Misi</a></li>
+                        <li><a href="{{ route('sejarah') }}">Sejarah</a></li>
+                        <li><a href="{{ route('gambaran.umum') }}">Gambaran Umum</a></li>
+                        <li><a href="{{ route('struktur.organisasi') }}">Struktur Organisasi</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="{{ url('pkk') }}"><span>Kelembagaan</span> <i
@@ -50,7 +50,7 @@
                                 Kegiatan / Keramaian</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ url('berita') }}">Berita</a></li>
+                <li><a href="{{ route('berita') }}">Berita</a></li>
                 <li><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

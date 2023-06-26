@@ -5,9 +5,8 @@
     <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-                <img src="{{ asset('assets/img/favicon.png') }}" alt="..." class="avatar-img">
-
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="{{ route('dashboard') }}">
+                <img src="{{ asset('assets/img/favicon.png') }}" alt="Logo" class="avatar-img">
             </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -33,7 +32,23 @@
                                 Berita</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('berita.index') }}"><span class="ml-1 item-text">Sambutan Lurah</span></a>
+                        <a class="nav-link pl-3" href="{{ route('lurah.index') }}"><span class="ml-1 item-text">Sambutan Lurah</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+                <a href="#kependudukan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <i class="fe fe-users fe-16"></i>
+                    <span class="ml-3 item-text">Kependudukan</span>
+                </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="kependudukan">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Data Penduduk</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Rt & Rw</span></a>
                     </li>
                 </ul>
             </li>
@@ -60,16 +75,16 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="profil-kelurahan">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Visi & Misi</span></a>
+                        <a class="nav-link pl-3" href="{{ route('visimisi.index') }}"><span class="ml-1 item-text">Visi & Misi</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Sejarah</span></a>
+                        <a class="nav-link pl-3" href="{{ route('sejarah.index') }}"><span class="ml-1 item-text">Sejarah</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Gambaran Umum</span></a>
+                        <a class="nav-link pl-3" href="{{ route('gambaranumum.index') }}"><span class="ml-1 item-text">Gambaran Umum</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Struktur
+                        <a class="nav-link pl-3" href="{{ route('organisasi.index') }}"><span class="ml-1 item-text">Struktur
                                 Organisasi</span></a>
                     </li>
                 </ul>
@@ -78,7 +93,7 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item active dropdown">
                 <a href="#kelembagaan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-users fe-16"></i>
+                    <i class="fe fe-award fe-16"></i>
                     <span class="ml-3 item-text">Kelembagaan</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="kelembagaan">

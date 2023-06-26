@@ -56,8 +56,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <span class="h2 mb-0">186</span>
-                            <p class="small text-muted mb-0">Postingan</p>
+                            <span class="h2 mb-0">{{ $berita }}</span>
+                            <p class="small text-muted mb-0">Postingan Berita</p>
                         </div>
                         <div class="col-auto">
                             <span class="fe fe-32 fe-grid text-muted mb-0"></span>

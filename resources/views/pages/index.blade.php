@@ -68,216 +68,103 @@
         </div>
         <div class="row">
 
+            {{-- side berita --}}
             <div class="col-lg-4">
 
                 <div class="sidebar sticky-top">
 
                     <h3 class="sidebar-title">Search</h3>
                     <div class="sidebar-item search-form">
-                        <form action="">
-                            <input type="text">
+                        <form action="/" method="get">
+                            <input type="text" name="cari-berita" value="{{ request('cari-berita') }}">
                             <button type="submit"><i class="bi bi-search"></i></button>
                         </form>
                     </div><!-- End sidebar search formn-->
 
 
-
+                    {{-- sambutan Lurah --}}
                     <h3 class="sidebar-title">Sambutan Lurah</h3>
                     <div class="sidebar-item recent-posts">
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                            <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
+                        @foreach ($sambutan_lurah as $sambutan)
+                            <div class="post-item clearfix">
+                                <img src="{{ asset('storage/' . $sambutan->gambar_lurah) }}" alt="gambar lurah">
+                                <h4><a
+                                        href="{{ route('sambutanlurah', $sambutan->slug) }}">{{ $sambutan->nama_lurah }}</a>
+                                </h4>
+                                <time datetime="2020-01-01">{{ $sambutan->updated_at->format('M d, Y') }}</time>
+                            </div>
+                        @endforeach
                     </div><!-- End sidebar recent posts-->
-
+                    {{-- end sambutan Lurah --}}
                     <h3 class="sidebar-title">Recent Posts</h3>
                     <div class="sidebar-item recent-posts">
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                            <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
-
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-2.jpg" alt="">
-                            <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
-
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-3.jpg" alt="">
-                            <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
-
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-4.jpg" alt="">
-                            <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
-
-                        <div class="post-item clearfix">
-                            <img src="assets/img/blog/blog-recent-5.jpg" alt="">
-                            <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                            <time datetime="2020-01-01">Jan 1, 2020</time>
-                        </div>
+                        @foreach ($recent_post as $b)
+                            <div class="post-item clearfix">
+                                <img src="{{ asset('storage/' . $b->gambar) }}" alt="{{ $b->judul }}">
+                                <h4><a href="{{ route('detail.berita', $b->slug) }}">{{ $b->judul }}</a></h4>
+                                <time datetime="2020-01-01">{{ $b->created_at->format('M d, Y') }}</time>
+                            </div>
+                        @endforeach
 
                     </div><!-- End sidebar recent posts-->
                 </div><!-- End sidebar -->
 
             </div><!-- End blog sidebar -->
 
-            {{-- <div class="col-lg-1"></div> --}}
 
+            {{-- berita --}}
             <div class="col-lg-8 entries">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <article class="entry">
+                    @if ($berita->count())
+                        @foreach ($berita as $berita)
+                            <div class="col-lg-6 col-sm-12">
+                                <article class="entry">
 
-                            <div class="entry-img">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                                    <div class="entry-img">
+                                        <img src="{{ asset('storage/' . $berita->gambar) }}" alt=""
+                                            class="img-fluid">
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                        <a href="{{ route('detail.berita', $berita->slug) }}">{{ $berita->judul }}</a>
+                                    </h2>
+
+                                    <div class="entry-meta">
+                                        <ul>
+                                            <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
+                                                    href="{{ route('detail.berita', $berita->slug) }}">{{ $berita->views }}</a>
+                                            </li>
+                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
+                                                    href="{{ route('detail.berita', $berita->slug) }}"><time
+                                                        datetime="2020-01-01">{{ $berita->created_at->format('M d, Y') }}</time></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="entry-content">
+                                        <p>
+                                            {!! $berita->excerp !!}
+                                        </p>
+                                        <div class="read-more">
+                                            <a href="{{ route('detail.berita', $berita->slug) }}">Selengkapnya</a>
+                                        </div>
+                                    </div>
+
+                                </article><!-- End blog entry -->
                             </div>
+                        @endforeach
+                    @else
+                        <h5 class="text-center mt-5"> Berita Yang Anda Cari Tidak Ada !!!</h5>
+                    @endif
 
-                            <h2 class="entry-title">
-                                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui
-                                    quibusdam quia</a>
-                            </h2>
-
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
-                                            href="blog-single.html">200</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="entry-content">
-                                <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
-                                    praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                                </p>
-                                <div class="read-more">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div>
-
-                        </article><!-- End blog entry -->
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <article class="entry">
-
-                            <div class="entry-img">
-                                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <h2 class="entry-title">
-                                <a href="blog-single.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                            </h2>
-
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
-                                            href="blog-single.html">200</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="entry-content">
-                                <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
-                                    praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                                </p>
-                                <div class="read-more">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div>
-
-                        </article><!-- End blog entry -->
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-
-                        <article class="entry">
-
-                            <div class="entry-img">
-                                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <h2 class="entry-title">
-                                <a href="blog-single.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta
-                                    libero
-                                    sit sint.</a>
-                            </h2>
-
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
-                                            href="blog-single.html">200</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="entry-content">
-                                <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
-                                    praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                                </p>
-                                <div class="read-more">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div>
-
-                        </article><!-- End blog entry -->
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <article class="entry">
-
-                            <div class="entry-img">
-                                <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <h2 class="entry-title">
-                                <a href="blog-single.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti
-                                    explicabo
-                                    eius exercitationem.</a>
-                            </h2>
-
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a
-                                            href="blog-single.html">200</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="entry-content">
-                                <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi
-                                    praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                                </p>
-                                <div class="read-more">
-                                    <a href="blog-single.html">Read More</a>
-                                </div>
-                            </div>
-
-                        </article><!-- End blog entry -->
-                    </div>
                 </div>
-                <div class="blog-pagination">
-                    <ul class="justify-content-center">
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    </ul>
-                </div>
+                @if ($berita->count() >= 6)
+                    <div class="blog-pagination">
+                        <h5 class="text-center"> <a href="" class="text-center btn text-white"
+                                style="background-color: #4fa6d5">Lihat Berita Lainnya</a></h5>
+
+                    </div>
+                @endif
 
             </div><!-- End blog entries list -->
 

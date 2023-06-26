@@ -11,24 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('beritas', function (Blueprint $table) {
+        Schema::create('sambutan_lurah', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('gambar');
-            $table->text('isi');
+            $table->string('nama_lurah');
+            $table->text('sambutan_lurah');
+            $table->string('gambar_lurah');
             $table->string('slug');
-            $table->string('excerp');
             $table->integer('views')->default(1);
-            $table->softDeletes();
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('beritas');
+        Schema::dropIfExists('sambutan_lurah');
     }
 };

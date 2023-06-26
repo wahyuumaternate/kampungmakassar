@@ -11,7 +11,7 @@ class BeritaController extends Controller
 {
     public function index() {
         return view('admin.berita.index',[
-            'beritas' => Berita::latest()->get()
+            'beritas' => Berita::with([])->latest()->get()
         ]);
     }
 
@@ -36,7 +36,47 @@ class BeritaController extends Controller
 
 
         Berita::create($rules);
-        return redirect()->route('berita.index')->with('success','Data Berhasil Di Tambahkan');
+        return redirect()->route('berita.index')->with('success','Berita Berhasil Di Tambahkan');
+    }
+
+    public function edit(Berita $berita) {
+        return view('admin.berita.edit',[
+            'berita' => $berita
+        ]);
+    }
+
+    public function update(Request $request, Berita $berita)
+    {
+        // dd($request->gambar);
+        $rules = $request->validate([
+            'judul'=>['required'],
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048|unique:beritas',
+            'isi' => 'required',
+        ]);
+
+        if ($request->file('gambar')) {
+            if ($request->gambar) {
+                Storage::delete($request->gambarlama);
+            }
+            
+            $rules['gambar'] = $request->file('gambar')->store('beritaGambar');
+        }
+
+        $rules['slug'] = Str::slug($request->judul, '-');
+        $rules['excerp']= Str::limit(strip_tags($request->isi),150);
+
+
+        $berita->where('id', $berita->id)->update($rules);
+        return redirect()->route('berita.index')->with('success','Berita Berhasil Di Ubah');
+    }
+
+    public function destroy(Berita $berita)
+    {
+        if ($berita->gambar) {
+            Storage::delete($berita->gambar);
+        }
+        Berita::destroy($berita->id);
+        return redirect()->route('berita.index')->with('success','Berita Berhasil Di Hapus');
     }
 
     
