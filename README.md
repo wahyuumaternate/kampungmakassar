@@ -1,1 +1,1 @@
-Wahyu Jihad Umaternate
+<img src="{{ asset('assets/img/logo.png') }}" alt="License">
