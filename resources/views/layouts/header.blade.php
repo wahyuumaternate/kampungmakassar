@@ -13,11 +13,7 @@
             <ul>
                 <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Beranda</a></li>
                 <li class="dropdown">
-                    <a class="{{ Request::is('visi-misi') ? 'active' : '' }}" href="{{ route('visimisi') }}">
-                    <a class="{{ Request::is('visi-misi') ? 'active' : '' }}
-                    {{ Request::is('sejarah') ? 'active' : '' }}
-                    {{ Request::is('gambaran-umum') ? 'active' : '' }}
-                    {{ Request::is('struktur-organisasi') ? 'active' : '' }}"
+                    <a class="{{ Request::is('profil*') ? 'active' : '' }}
                         href="{{ url('visi-misi') }}">
                         <span>Profil</span> <i class="bi bi-chevron-down"></i>
                     </a>
@@ -71,9 +67,7 @@
                                 Kegiatan / Keramaian</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('berita') }}">Berita</a></li>
-                <li><a href="{{ url('pengaduan') }}">Pengaduan</a></li>
-                <li><a class="{{ Request::is('berita') ? 'active' : '' }}" href="{{ url('berita') }}">Berita</a></li>
+                <li><a class="{{ Request::is('berita') ? 'active' : '' }}" href="{{ route('berita') }}">Berita</a></li>
                 <li><a class="{{ Request::is('pengaduan') ? 'active' : '' }}"
                         href="{{ url('pengaduan') }}">Pengaduan</a></li>
             </ul>
