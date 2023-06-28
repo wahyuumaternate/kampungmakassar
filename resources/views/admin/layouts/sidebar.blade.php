@@ -31,6 +31,9 @@
                         <a class="nav-link pl-3" href="{{ route('berita.index') }}"><span class="ml-1 item-text">Semua
                                 Berita</span></a>
                     </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{ route('berita.tambah') }}"><span class="ml-1 item-text">Tambah Berita</span></a>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="{{ route('lurah.index') }}"><span class="ml-1 item-text">Sambutan Lurah</span></a>
                     </li>
@@ -45,7 +48,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="kependudukan">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Data Penduduk</span></a>
+                        <a class="nav-link pl-3" href="{{ route('datapenduduk.index') }}"><span class="ml-1 item-text">Data Penduduk</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Rt & Rw</span></a>

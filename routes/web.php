@@ -3,6 +3,7 @@
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DatapendudukController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GambaranUmumController;
 use App\Http\Controllers\ProfileController;
@@ -27,38 +28,45 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BerandaController::class,'index'])->name('home');
 
 // dashboard
-Route::prefix('administrator/dashboard')->group(function () {
+Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
     
-    Route::get('/',[DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/',[DashboardController::class,'index'])->middleware(['verified'])->name('dashboard');
+    // kependudukan
+    Route::get('/data-penduduk', [DatapendudukController::class,'index'])->name('datapenduduk.index');
+    Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
+    Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
+    Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
+    Route::put('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
+    Route::delete('/data-penduduk/{datapenduduk:nik}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
     //berita
-    Route::get('/berita/semua-berita', [BeritaController::class,'index'])->middleware(['auth'])->name('berita.index');
-    Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->middleware(['auth'])->name('berita.tambah');
-    Route::post('/berita/tambah-berita/store', [BeritaController::class,'store'])->middleware(['auth'])->name('berita.store');
-    Route::get('/berita/{berita:slug}/edit-berita', [BeritaController::class,'edit'])->middleware(['auth'])->name('berita.edit');
-    Route::put('/berita/{berita:slug}/edit-berita', [BeritaController::class,'update'])->middleware(['auth'])->name('berita.update');
-    Route::delete('/berita/{berita:slug}', [BeritaController::class,'destroy'])->middleware(['auth'])->name('berita.delete');
+    Route::get('/berita/semua-berita', [BeritaController::class,'index'])->name('berita.index');
+    Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->name('berita.tambah');
+    Route::post('/berita/tambah-berita/store', [BeritaController::class,'store'])->name('berita.store');
+    Route::get('/berita/{berita:slug}/edit-berita', [BeritaController::class,'edit'])->name('berita.edit');
+    Route::put('/berita/{berita:slug}/edit-berita', [BeritaController::class,'update'])->name('berita.update');
+    Route::delete('/berita/{berita:slug}', [BeritaController::class,'destroy'])->name('berita.delete');
     //struktur organisani
-    Route::get('/profil-kelurahan/struktur-organisasi', [StrukturOrganisasiController::class,'index'])->middleware(['auth'])->name('organisasi.index');
-    Route::post('/profil-kelurahan/tambah-struktur-organisasi/store', [StrukturOrganisasiController::class,'store'])->middleware(['auth'])->name('organisasi.store');
-    Route::get('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'edit'])->middleware(['auth'])->name('organisasi.edit');
-    Route::put('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->middleware(['auth'])->name('organisasi.update');
-    Route::delete('/profil-kelurahan/{struktur_organisasi:slug}', [StrukturOrganisasiController::class,'destroy'])->middleware(['auth'])->name('organisasi.delete');
+    Route::get('/profil-kelurahan/struktur-organisasi', [StrukturOrganisasiController::class,'index'])->name('organisasi.index');
+    Route::post('/profil-kelurahan/tambah-struktur-organisasi/store', [StrukturOrganisasiController::class,'store'])->name('organisasi.store');
+    Route::get('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'edit'])->name('organisasi.edit');
+    Route::put('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->name('organisasi.update');
+    Route::delete('/profil-kelurahan/{struktur_organisasi:slug}', [StrukturOrganisasiController::class,'destroy'])->name('organisasi.delete');
     // sambutan Lurah
-    Route::get('/sambutan-lurah', [SambutanLurahController::class,'edit'])->middleware(['auth'])->name('lurah.index'); 
-    Route::post('/sambutan-lurah', [SambutanLurahController::class,'store'])->middleware(['auth'])->name('lurah.store'); 
-    Route::put('/sambutan-lurah/{sambutan}/update', [SambutanLurahController::class,'update'])->middleware(['auth'])->name('lurah.update');
+    Route::get('/sambutan-lurah', [SambutanLurahController::class,'edit'])->name('lurah.index'); 
+    Route::post('/sambutan-lurah', [SambutanLurahController::class,'store'])->name('lurah.store'); 
+    Route::put('/sambutan-lurah/{sambutan}/update', [SambutanLurahController::class,'update'])->name('lurah.update');
     // visimisi
-    Route::get('/profil-kelurahan/visi-misi', [VisiMisiController::class,'edit'])->middleware(['auth'])->name('visimisi.index');
-    Route::put('/profil-kelurahan/visi-misi/{visiMisi}/update', [VisiMisiController::class,'update'])->middleware(['auth'])->name('visimisi.update');
-    Route::post('/profil-kelurahan/visi-misi/', [VisiMisiController::class,'store'])->middleware(['auth'])->name('visimisi.store');
+    Route::get('/profil-kelurahan/visi-misi', [VisiMisiController::class,'edit'])->name('visimisi.index');
+    Route::put('/profil-kelurahan/visi-misi/{visiMisi}/update', [VisiMisiController::class,'update'])->name('visimisi.update');
+    Route::post('/profil-kelurahan/visi-misi/', [VisiMisiController::class,'store'])->name('visimisi.store');
     // sejarah
-    Route::get('/profil-kelurahan/sejarah', [SejarahController::class,'edit'])->middleware(['auth'])->name('sejarah.index');
-    Route::put('/profil-kelurahan/sejarah/{sejarah}/update', [SejarahController::class,'update'])->middleware(['auth'])->name('sejarah.update');
-    Route::post('/profil-kelurahan/sejarah/', [SejarahController::class,'store'])->middleware(['auth'])->name('sejarah.store');
+    Route::get('/profil-kelurahan/sejarah', [SejarahController::class,'edit'])->name('sejarah.index');
+    Route::put('/profil-kelurahan/sejarah/{sejarah}/update', [SejarahController::class,'update'])->name('sejarah.update');
+    Route::post('/profil-kelurahan/sejarah/', [SejarahController::class,'store'])->name('sejarah.store');
     // gambaran umum
-    Route::get('/profil-kelurahan/gambaranumum', [GambaranUmumController::class,'edit'])->middleware(['auth'])->name('gambaranumum.index');
-    Route::put('/profil-kelurahan/gambaranumum/{gambaranumum}/update', [GambaranUmumController::class,'update'])->middleware(['auth'])->name('gambaranumum.update');
-    Route::post('/profil-kelurahan/gambaranumum/', [GambaranUmumController::class,'store'])->middleware(['auth'])->name('gambaranumum.store');
+    Route::get('/profil-kelurahan/gambaranumum', [GambaranUmumController::class,'edit'])->name('gambaranumum.index');
+    Route::put('/profil-kelurahan/gambaranumum/{gambaranumum}/update', [GambaranUmumController::class,'update'])->name('gambaranumum.update');
+    Route::post('/profil-kelurahan/gambaranumum/', [GambaranUmumController::class,'store'])->name('gambaranumum.store');
 });
 // end dashboard
 
