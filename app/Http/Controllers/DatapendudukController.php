@@ -122,7 +122,7 @@ class DatapendudukController extends Controller
         $validate = $request->validate($rules);
         
         $datapenduduk->where('id', $datapenduduk->id)->update($validate);
-        return redirect()->route('datapenduduk.index')->with('success','Data Penduduk Berhasil Di Ubah');
+        return redirect()->route('datapenduduk.index')->with('success','Data Penduduk '.$datapenduduk->nama.' Berhasil Di Ubah');
     }
 
     /**

@@ -6,10 +6,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatapendudukController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GambaranUmumController;
+use App\Http\Controllers\PekerjaanPendidikanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SambutanLurahController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +40,15 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
     Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
     Route::delete('/data-penduduk/{datapenduduk}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
+    // pekerjaan & pendidikan
+    Route::get('kependudukan/pekerjaan', [PekerjaanPendidikanController::class,'pekerjaan'])->name('pekerjaan.index');
+    Route::get('kependudukan/pendidikan', [PekerjaanPendidikanController::class,'pendidikan'])->name('pendidikan.index');
+    // pekerjaan
+    Route::post('/pekerjaan-pekerjaan', [PekerjaanPendidikanController::class,'strorePekerjaan'])->name('pekerjaan.store');
+    Route::delete('/pekerjaan-pekerjaan/{pekerjaan}', [PekerjaanPendidikanController::class,'destroyPekerjaan'])->name('pekerjaan.delete');
+    // pendidikan
+    Route::post('/pendidikan-pendidikan', [PekerjaanPendidikanController::class,'strorePendidikan'])->name('pendidikan.store');
+    Route::delete('/pendidikan-pendidikan/{pendidikan}', [PekerjaanPendidikanController::class,'destroyPendidikan'])->name('pendidikan.delete');
     //berita
     Route::get('/berita/semua-berita', [BeritaController::class,'index'])->name('berita.index');
     Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->name('berita.tambah');
@@ -85,9 +96,28 @@ Route::prefix('profil')->group(function () {
 Route::prefix('berita')->group(function () {
     Route::get('/',[FrontendController::class,'berita'])->name('berita');
     Route::get('{berita:slug}/detail', [FrontendController::class,'detailberita'])->name('detail.berita');
-    
+    Route::get('/sambutan-lurah/{sambutanLurah:slug}/detail', [FrontendController::class,'sambutanlurah'])->name('sambutanlurah');
 });
-Route::get('/sambutan-lurah/{sambutanLurah:slug}/detail', [FrontendController::class,'sambutanlurah'])->name('sambutanlurah');
+
+// Statistik Routes
+Route::prefix('statistik')->group(function () {
+    
+    Route::get('/jenis-kelamin',[StatistikController::class,'jenis_kelamin'])->name('jenis_kelamin');
+    
+    Route::get('/agama',[StatistikController::class,'agama'])->name('agama');
+    
+    Route::get('/pekerjaan', function () {
+        return view('pages.statistik_kelurahan.pekerjaan');
+    });
+    
+    Route::get('/pendidikan', function () {
+        return view('pages.statistik_kelurahan.pendidikan');
+    });
+    
+    Route::get('/kelompok-umur', function () {
+        return view('pages.statistik_kelurahan.kelompok_umur');
+    });
+});
 
 
 // Kelembagaan Routes
@@ -100,26 +130,8 @@ Route::get('/lpm', function () {
 });
 
 
-// Statistik Kelurahan Routes
-Route::get('/jenis-kelamin', function () {
-    return view('pages.statistik_kelurahan.jenis_kelamin');
-});
 
-Route::get('/agama', function () {
-    return view('pages.statistik_kelurahan.agama');
-});
 
-Route::get('/pekerjaan', function () {
-    return view('pages.statistik_kelurahan.pekerjaan');
-});
-
-Route::get('/pendidikan', function () {
-    return view('pages.statistik_kelurahan.pendidikan');
-});
-
-Route::get('/kelompok-umur', function () {
-    return view('pages.statistik_kelurahan.kelompok_umur');
-});
 
 // Pelayannan Routes
 Route::get('/surat-keterangan-kelahiran', function () {

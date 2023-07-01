@@ -42,8 +42,8 @@
                         href="{{ url('jenis-kelamin') }}"><span>Statistik Kelurahan</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="{{ url('jenis-kelamin') }}">Jenis Kelamin</a></li>
-                        <li><a href="{{ url('agama') }}">Agama</a></li>
+                        <li><a href="{{ route('jenis_kelamin') }}">Jenis Kelamin</a></li>
+                        <li><a href="{{ route('agama') }}">Agama</a></li>
                         <li><a href="{{ url('pekerjaan') }}">Pekerjaan</a></li>
                         <li><a href="{{ url('pendidikan') }}">Pendidikan</a></li>
                         <li><a href="{{ url('kelompok-umur') }}">Kelompok Umur</a></li>

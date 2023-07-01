@@ -16,21 +16,21 @@ class Datapenduduk extends Model
 
     public function rt(): BelongsTo
     {
-        return $this->belongsTo(Rt::class);
+        return $this->belongsTo(Rt::class,'id_rt','id');
     }
     
     public function rw(): BelongsTo
     {
-        return $this->belongsTo(Rw::class);
+        return $this->belongsTo(Rw::class,'id_rw','id');
     }
     
     public function pekerjaan(): BelongsTo
     {
-        return $this->belongsTo(Pekerjaan::class);
+        return $this->belongsTo(Pekerjaan::class,'id_pekerjaan','id');
     }
 
     public function pendidikan(): BelongsTo
     {
-        return $this->belongsTo(Pendidikan::class);
+        return $this->belongsTo(Pendidikan::class,'id_pendidikan','id');
     }
 }

@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <span class="h2 mb-0">186</span>
+                            <span class="h2 mb-0">{{ $rt }}</span>
                             <p class="small text-muted mb-0">RT</p>
                         </div>
                         <div class="col-auto">
@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <span class="h2 mb-0">186</span>
+                            <span class="h2 mb-0">{{ $rw }}</span>
                             <p class="small text-muted mb-0">RW</p>
                         </div>
                         <div class="col-auto">
@@ -41,7 +41,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <span class="h2 mb-0">186</span>
+                            <span class="h2 mb-0">{{ $datapenduduk }}</span>
                             <p class="small text-muted mb-0">Penduduk</p>
                         </div>
                         <div class="col-auto">

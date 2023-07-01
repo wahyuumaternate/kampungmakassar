@@ -41,11 +41,16 @@
             </li>
         </ul>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item w-100">
-                <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fe fe-info fe-16"></i>
-                    <span class="ml-3 item-text">Info Desa</span>
+            <li class="nav-item dropdown">
+                <a href="#info-desa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                   <i class="fe fe-info fe-16"></i>
+                    <span class="ml-3 item-text">Info Kelurahan</span>
                 </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="info-desa">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Rt & Rw</span></a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -59,7 +64,10 @@
                         <a class="nav-link pl-3" href="{{ route('datapenduduk.index') }}"><span class="ml-1 item-text">Data Penduduk</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Rt & Rw</span></a>
+                        <a class="nav-link pl-3" href="{{ route('pekerjaan.index') }}"><span class="ml-1 item-text">Pekerjaan</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{ route('pendidikan.index') }}"><span class="ml-1 item-text">Pendidikan</span></a>
                     </li>
                 </ul>
             </li>

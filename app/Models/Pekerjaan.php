@@ -16,6 +16,6 @@ class Pekerjaan extends Model
 
     public function datapenduduk(): HasMany
     {
-        return $this->hasMany(Datapenduduk::class);
+        return $this->hasMany(Datapenduduk::class,'id_pekerjaan','id');
     }
 }
