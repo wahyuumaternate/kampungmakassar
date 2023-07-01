@@ -13,20 +13,16 @@ return new class extends Migration
     {
         Schema::create('datapenduduks', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('id_rt')->nullable();
-            // $table->foreignId('id_rw')->nullable();
-            // $table->foreignId('id_pendidikan')->nullable();
-            // $table->foreignId('id_pekerjaan')->nullable();
-            $table->string('rt');
-            $table->string('rw');
-            $table->string('pendidikan');
-            $table->string('pekerjaan');
+            $table->foreignId('id_rt')->references('id')->on('rt');
+            $table->foreignId('id_rw')->references('id')->on('rw');
+            $table->foreignId('id_pendidikan')->references('id')->on('pendidikan');
+            $table->foreignId('id_pekerjaan')->references('id')->on('pekerjaan');
             $table->string('alamat');
             $table->string('no_kk');
             $table->string('nama_kepala_keluarga');
             $table->string('nik');
             $table->string('nama');
-            $table->enum('jenis_kelamin',['LAKI-LAkI','PEREMPUAN']);
+            $table->string('jenis_kelamin');
             $table->string('hubungan');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
@@ -36,6 +32,7 @@ return new class extends Migration
             $table->string('golongan_darah');
             $table->string('kewarganegaraan');
             $table->string('suku');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

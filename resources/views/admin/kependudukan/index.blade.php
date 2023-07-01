@@ -21,12 +21,12 @@
                                 <table class="table datatables" id="dataTable-1">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Nama</th>
-                                            <th>Nik</th>
-                                            <th>Alamat</th>
-                                            <th>Usia</th>
-                                            <th>Action</th>
+                                            <th><strong>#</strong></th>
+                                            <th><strong>Nama</strong></th>
+                                            <th><strong>Nik</strong></th>
+                                            <th><strong>Alamat</strong></th>
+                                            <th><strong>Usia</strong></th>
+                                            <th><strong>Action</strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -44,14 +44,14 @@
                                                         <span class="text-muted sr-only">Action</span>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="{{ route('datapenduduk.edit', $penduduk->id) }}"
+                                                        <a href="{{ route('datapenduduk.edit', $penduduk->nik) }}"
                                                             class="btn btn-primary dropdown-item"><i class="fe fe-edit"></i>
                                                             Edit</a>
                                                         <form class="d-flex" method="POST"
                                                             action="{{ route('datapenduduk.delete', $penduduk->id) }}">
                                                             @csrf
                                                             @method('delete')
-                                                            <button class="btn btn-danger dropdown-item" onclick="return confirm('anda yakin ingin menghapus penduduk ini secara permanen?');event.preventDefault();
+                                                            <button class="btn btn-danger dropdown-item" onclick="return confirm('anda yakin ingin menghapus data penduduk {{ $penduduk->nama }} ini secara permanen?');event.preventDefault();
                                                             "><i class="fe fe-trash-2"></i> Hapus</button>
                                                         </form>
                                                         {{-- <a class="dropdown-item" href="#">Edit</a>

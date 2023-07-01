@@ -154,7 +154,7 @@
                             </div>
                         @endforeach
                     @else
-                        <h5 class="text-center mt-5"> Berita Yang Anda Cari Tidak Ada !!!</h5>
+                        <h5 class="text-center mt-5"> Berita Tidak Tersedia !!!</h5>
                     @endif
 
                 </div>

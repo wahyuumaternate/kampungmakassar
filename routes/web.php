@@ -36,8 +36,8 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
     Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
     Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
-    Route::put('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
-    Route::delete('/data-penduduk/{datapenduduk:nik}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
+    Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
+    Route::delete('/data-penduduk/{datapenduduk}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
     //berita
     Route::get('/berita/semua-berita', [BeritaController::class,'index'])->name('berita.index');
     Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->name('berita.tambah');
