@@ -103,20 +103,11 @@ Route::prefix('berita')->group(function () {
 Route::prefix('statistik')->group(function () {
     
     Route::get('/jenis-kelamin',[StatistikController::class,'jenis_kelamin'])->name('jenis_kelamin');
-    
     Route::get('/agama',[StatistikController::class,'agama'])->name('agama');
+    Route::get('/pekerjaan',[StatistikController::class,'pekerjaan'])->name('pekerjaan');
+    Route::get('/pendidikan',[StatistikController::class,'pendidikan'])->name('pendidikan');
+    Route::get('/kelompok-umur',[StatistikController::class,'kelompok_umur'])->name('kelompok_umur');
     
-    Route::get('/pekerjaan', function () {
-        return view('pages.statistik_kelurahan.pekerjaan');
-    });
-    
-    Route::get('/pendidikan', function () {
-        return view('pages.statistik_kelurahan.pendidikan');
-    });
-    
-    Route::get('/kelompok-umur', function () {
-        return view('pages.statistik_kelurahan.kelompok_umur');
-    });
 });
 
 

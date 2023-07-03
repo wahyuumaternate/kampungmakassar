@@ -207,13 +207,13 @@
                                             <select class="form-control select2" id="simple-select2"
                                                 value="{{ old('agama') }}" name="agama" required>
                                                 <optgroup label="-- Agama --">
-                                                    <option value="Islam">Islam</option>
-                                                    <option value="Kristen Protestan">Kristen Protestan</option>
-                                                    <option value="Kristen Katolik">Kristen Katolik</option>
-                                                    <option value="Hindu">Hindu</option>
-                                                    <option value="Buddha">Buddha</option>
-                                                    <option value="Konghucu">Konghucu</option>
-                                                    <option value="Agama lainnya">Agama lainnya</option>
+                                                    <option value="ISLAM">Islam</option>
+                                                    <option value="KRISTEN PROTESTAN">Kristen Protestan</option>
+                                                    <option value="KRISTEN KATOLIK">Kristen Katolik</option>
+                                                    <option value="HINDU">Hindu</option>
+                                                    <option value="BUDDHA">Buddha</option>
+                                                    <option value="KONGHUCU">Konghucu</option>
+                                                    <option value="AGAMA LAINNYA">Agama lainnya</option>
                                                 </optgroup>
 
                                             </select>

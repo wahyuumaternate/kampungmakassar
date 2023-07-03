@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Datapenduduk;
 use App\Models\SambutanLurah;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,10 @@ class BerandaController extends Controller
                 'berita'=> $berita,
                 'recent_post'=> Berita::with([])->latest()->paginate(5),
                 'hero'=> Berita::with([])->latest()->paginate(2),
-                'sambutan_lurah'=> SambutanLurah::with([])->where('id', 1)->get()
+                'sambutan_lurah'=> SambutanLurah::with([])->where('id', 1)->get(),
+                'jumlah_penduduk' => Datapenduduk::all()->count(),
+                'jumlah_perempuan' =>Datapenduduk::where('jenis_kelamin', "PEREMPUAN")->count(),
+                'jumlah_laki_laki' =>Datapenduduk::where('jenis_kelamin', "LAKI-LAKI")->count()
             ]);
     }
 

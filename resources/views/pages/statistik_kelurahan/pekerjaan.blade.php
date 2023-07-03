@@ -6,18 +6,165 @@
     {{-- @include('layouts.hero') --}}
 @endsection
 
-<!-- ======= PEKERJAAN Section ======= -->
-<section id="PEKERJAAN" class="blog">
+<!-- ======= AGAMA Section ======= -->
+<section id="AGAMA" class="blog">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <h2>PEKERJAAN</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend neque a lectus consequat, vitae pharetra lectus consectetur. Nam efficitur dapibus est, ut venenatis eros tincidunt at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras gravida purus ac ligula aliquet, id consequat velit sagittis. Nunc vitae risus aliquet, posuere elit id, sagittis nulla. Curabitur quis dui pretium, convallis nisi vitae, lobortis dolor. Fusce lacinia vulputate arcu, at feugiat nulla bibendum ut. Integer in leo at ipsum pharetra aliquet. Suspendisse semper orci quis orci interdum, non dictum sapien fermentum. Curabitur consequat elit a bibendum fringilla.<br>
+            <div class="row">
 
-Sed rhoncus, ipsum nec varius efficitur, sem arcu tristique arcu, vitae placerat massa ante in nisi. Etiam consequat, lectus et semper iaculis, metus purus facilisis massa, a pulvinar neque est nec urna. Fusce consequat dolor lacus, nec lobortis lacus finibus id. Integer et consectetur metus. Aliquam at nunc nec mi consectetur consequat sed sit amet dolor. Mauris finibus placerat dolor, in scelerisque risus faucibus in. Nulla dapibus bibendum aliquam. Suspendisse consectetur eleifend ligula, in viverra lacus pretium non. Curabitur euismod metus vel diam ultricies, nec feugiat metus scelerisque. Sed vel justo ut risus euismod suscipit. Donec at rhoncus nunc.<br>
+                <div class="col-lg-4 col-md-12 mb-1">
+                    <div class="accordion sticky-top" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                     <span class="me-3">  <i class="bi bi-pie-chart-fill"></i> </span> Statistik Penduduk
+                                </button>
+                            </h3>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <div class="list-group">
+                                        <a href="{{ route('jenis_kelamin') }}" class="list-group-item list-group-item-action ">Jenis
+                                            Kelamin</a>
+                                        <a href="{{ route('agama') }}" class="list-group-item list-group-item-action ">Agama</a>
+                                        <a href="{{ route('pekerjaan') }}" class="list-group-item list-group-item-action active">Pekerjaan</a>
+                                        <a href="{{ route('pendidikan') }}"
+                                            class="list-group-item list-group-item-action ">Pendidikan</a>
+                                        <a href="{{ route('kelompok_umur') }}" class="list-group-item list-group-item-action ">Kelompok
+                                            Umur</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    <span class="me-3"> <i class="bi bi-graph-up"></i> </span> Statistik Keluarga
+                                </button>
+                            </h3>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    <span class="me-3">  <i class="bi bi-bar-chart-line"></i> </span> Statistik Lainnya
+                                </button>
+                            </h3>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-Pellentesque bibendum malesuada leo, nec euismod massa congue ac. Sed pulvinar, risus ac cursus dapibus, nibh elit tempor turpis, eu dapibus velit ante id nisi. Phasellus maximus ipsum lacus, ut dignissim enim consequat non. Nunc at mi bibendum, congue mauris non, efficitur ex. Nullam ut lobortis leo, vitae malesuada nibh. Vivamus posuere velit sit amet turpis sollicitudin, et consectetur nulla condimentum. Ut non dolor nulla. Aliquam posuere arcu id risus interdum, a mattis odio volutpat. Donec at ex ligula. Fusce efficitur consectetur ligula, sit amet rhoncus massa varius id. Morbi vel sollicitudin ligula. Nunc eu velit consectetur, fermentum nibh eget, elementum justo. Nunc interdum mi eu odio maximus, id fermentum turpis condimentum.</p>
-    </div>
-</section><!-- End PEKERJAAN Section -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="card shadow">
+                        <div class="container pt-3">
+                            <div id="pekerjaan" style="min-height: 400px;" class="echart"></div>
+                        </div>
+                        
+                        <div class="container" style="overflow-x:auto;">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Kelompok</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Laki-Laki</th>
+                                        <th scope="col">Perempuan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($pekerjaan as $pk)
+                                        <tr>
+                                            <th scope="row">{{ $loop->iteration }}</th>
+                                            <td>{{ $pk->nama_pekerjaan }}</td>
+                                            <td> {{ $penduduk->where('id_pekerjaan', $pk->id)->count() }}</td>
+                                            <td> {{ $penduduk->where('id_pekerjaan', $pk->id)->where('jenis_kelamin', "LAKI-LAKI")->count() }}</td>
+                                            <td> {{ $penduduk->where('id_pekerjaan', $pk->id)->where('jenis_kelamin', "PEREMPUAN")->count() }}</td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</section><!-- End AGAMA Section -->
 
 @include('layouts.footer')
+
+@section('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            echarts.init(document.querySelector("#pekerjaan")).setOption({
+                title: {
+                    text: 'Statistik Berdasarkan Pekerjaan',
+                    subtext: 'Grafik Pekerjaan',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {
+                            show: true
+                        },
+                        dataView: {
+                            show: false,
+                            readOnly: false
+                        },
+                        restore: {
+                            show: false
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Populasi',
+                    type: 'pie',
+                    radius: '70%',
+                    data: [
+                        @foreach ($pekerjaan as $d)
+                            {
+                                @foreach ($penduduk as $p)
+                                    value: {{ $penduduk->where('id_pekerjaan', $d->id)->count() }},
+                                @endforeach
+                                name: "{{ $d->nama_pekerjaan }}",
+                            },
+                        @endforeach
+
+
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            });
+        });
+    </script>
+@endsection
 @endsection

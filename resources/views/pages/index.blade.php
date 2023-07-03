@@ -154,14 +154,20 @@
                             </div>
                         @endforeach
                     @else
-                        <h5 class="text-center mt-5"> Berita Tidak Tersedia !!!</h5>
+                    <div class="text-center">
+                        <img src="{{ asset('assets/img/tidakadaberita.svg') }}" width="50%" class="img-fluid" alt="">
+                        <h6 class="text-center mt-5 text-muted"> Berita Tidak Tersedia Silakan kunjungi kembali dalam waktu dekat</h6>
+                        <a class="text-center mt-5 btn text-light" style="background-color:#1B6B93;" href="/"><i class="bi bi-arrow-return-left"></i> Kembali</a>
+                    </div>
                     @endif
 
                 </div>
                 @if ($berita->count() >= 6)
                     <div class="blog-pagination">
                         <h5 class="text-center"> <a href="" class="text-center btn text-white"
-                                style="background-color: #4fa6d5">Lihat Berita Lainnya</a></h5>
+                                style="background-color:#1B6B93;">Lihat Berita Lainnya</a></h5>
+                        
+                               
 
                     </div>
                 @endif
@@ -180,19 +186,19 @@
         <div class="row counters">
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_penduduk }}" data-purecounter-duration="1"
                     class="purecounter"></span>
                 <p>Jumlah Penduduk</p>
             </div>
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_perempuan }}" data-purecounter-duration="1"
                     class="purecounter"></span>
                 <p>Jumlah Penduduk Perempuan</p>
             </div>
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_laki_laki }}" data-purecounter-duration="1"
                     class="purecounter"></span>
                 <p>Jumlah Penduduk Laki - Laki</p>
             </div>

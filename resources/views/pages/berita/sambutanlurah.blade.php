@@ -1,10 +1,24 @@
-@extends('layouts.main')
+@extends('layouts.main',['title' => $sambutanLurah->nama_lurah])
 
 @section('body')
 @section('outmain')
     @include('layouts.header')
     {{-- @include('layouts.hero') --}}
 @endsection
+<!-- ======= breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <ol>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="{{ route('berita') }}">Berita</a></li>
+          <li>Sambutan Lurah</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End breadcrumbs Section -->
 
 <!-- ======= posts Section ======= -->
 <section id="blog" class="blog">
@@ -12,7 +26,7 @@
         <div class="row">
 
             {{-- side berita --}}
-            <div class="col-lg-3">
+            <div class="col-lg-5">
 
                 <div class="sidebar sticky-top">
                     
@@ -33,7 +47,7 @@
 
 
             {{-- berita --}}
-            <div class="col-lg-9 entries">
+            <div class="col-lg-7 entries">
                 <div class="row">
                         <div class="col-sm-12">
                             <article class="entry">

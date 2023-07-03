@@ -5,6 +5,20 @@
     @include('layouts.header')
     {{-- @include('layouts.hero') --}}
 @endsection
+<!-- ======= breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+                <li><a href="/">Beranda</a></li>
+                <li><a href="/">Struktur Organisasi</a></li>
+                <li>PKK</li>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End breadcrumbs Section -->
 
 <!-- ======= PKK Section ======= -->
 <section id="struktur_organisasi" class="blog">

@@ -26,10 +26,9 @@
                         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
                     </div>
                     <select class="form-select" aria-label="Default select example">
-                        <option selected>Jenis Pengaduan</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>-- Pilih Jenis Pengaduan --</option>
+                        <option value="Penyalahgunaan Wewenang">Penyalahgunaan Wewenang</option>
+                        <option value="Pelayanan Public/Masyarakat">Pelayanan Public/Masyarakat</option>
                     </select>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Isi Pengaduan</label>
@@ -40,7 +39,7 @@
                         <input class="form-control" type="file" id="formFileMultiple" multiple>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+                        <button type="submit" class="btn btn-primary mb-3">Kirim</button>
                     </div>
                 </div>
             </div>

@@ -34,19 +34,15 @@
                     </ul>
                 </li>
                 <li class="dropdown"><a
-                        class="{{ Request::is('jenis-kelamin') ? 'active' : '' }}
-                        {{ Request::is('agama') ? 'active' : '' }}
-                        {{ Request::is('pekerjaan') ? 'active' : '' }}
-                        {{ Request::is('pendidikan') ? 'active' : '' }}
-                        {{ Request::is('kelompok-umur') ? 'active' : '' }}"
+                        class="{{ Request::is('statistik*') ? 'active' : '' }}"
                         href="{{ url('jenis-kelamin') }}"><span>Statistik Kelurahan</span> <i
                             class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="{{ route('jenis_kelamin') }}">Jenis Kelamin</a></li>
                         <li><a href="{{ route('agama') }}">Agama</a></li>
-                        <li><a href="{{ url('pekerjaan') }}">Pekerjaan</a></li>
-                        <li><a href="{{ url('pendidikan') }}">Pendidikan</a></li>
-                        <li><a href="{{ url('kelompok-umur') }}">Kelompok Umur</a></li>
+                        <li><a href="{{ route('pekerjaan') }}">Pekerjaan</a></li>
+                        <li><a href="{{ route('pendidikan') }}">Pendidikan</a></li>
+                        <li><a href="{{ route('kelompok_umur') }}">Kelompok Umur</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a
@@ -68,8 +64,11 @@
                     </ul>
                 </li>
                 <li><a class="{{ Request::is('berita') ? 'active' : '' }}" href="{{ route('berita') }}">Berita</a></li>
-                <li><a class="{{ Request::is('pengaduan') ? 'active' : '' }}"
-                        href="{{ url('pengaduan') }}">Pengaduan</a></li>
+                <li><a class="{{ Request::is('pengaduan') ? 'active' : '' }}" href="{{ url('pengaduan') }}">Pengaduan</a></li>
+                <li><a class="{{ Request::is('pengaduan') ? 'active' : '' }}" href="{{ url('pengaduan') }}"><span class="btn text-light" style="background-color:#1B6B93;">Login <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg></span> </a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

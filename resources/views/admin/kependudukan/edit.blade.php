@@ -207,13 +207,13 @@
                                             <select class="form-control select2" id="simple-select2"
                                                 value="{{ old('agama') }}" name="agama" required>
                                                 <optgroup label="-- Agama --">
-                                                    <option @if ($penduduk->agama == "Islam") {{ "selected" }} @endif value="Islam">Islam</option>
-                                                    <option @if ($penduduk->agama == "Kristen Protestan") {{ "selected" }} @endif value="Kristen Protestan">Kristen Protestan</option>
-                                                    <option @if ($penduduk->agama == "Kristen Katolik") {{ "selected" }} @endif value="Kristen Katolik">Kristen Katolik</option>
-                                                    <option @if ($penduduk->agama == "Hindu") {{ "selected" }} @endif value="Hindu">Hindu</option>
-                                                    <option @if ($penduduk->agama == "Buddha") {{ "selected" }} @endif value="Buddha">Buddha</option>
-                                                    <option @if ($penduduk->agama == "Konghucu") {{ "selected" }} @endif value="Konghucu">Konghucu</option>
-                                                    <option @if ($penduduk->agama == "Agama lainnya") {{ "selected" }} @endif value="Agama lainnya">Agama lainnya</option>
+                                                    <option @if ($penduduk->agama == "ISLAM") {{ "selected" }} @endif value="ISLAM">Islam</option>
+                                                    <option @if ($penduduk->agama == "KRISTEN PROTESTAN") {{ "selected" }} @endif value="KRISTEN PROTESTAN">Kristen Protestan</option>
+                                                    <option @if ($penduduk->agama == "KRISTEN KATOLIK") {{ "selected" }} @endif value="KRISTEN KATOLIK">Kristen Katolik</option>
+                                                    <option @if ($penduduk->agama == "HINDU") {{ "selected" }} @endif value="HINDU">Hindu</option>
+                                                    <option @if ($penduduk->agama == "BUDDHA") {{ "selected" }} @endif value="BUDDHA">Buddha</option>
+                                                    <option @if ($penduduk->agama == "KONGHUCU") {{ "selected" }} @endif value="KONGHUCU">Konghucu</option>
+                                                    <option @if ($penduduk->agama == "AGAMA LAINNYA") {{ "selected" }} @endif value="AGAMA LAINNYA">Agama lainnya</option>
                                                 </optgroup>
 
                                             </select>
