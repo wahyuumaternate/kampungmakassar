@@ -26,7 +26,16 @@ h6,
 .font-primary {
   font-family: "Roboto", sans-serif;
 }
-
+.index-bg{
+  background-color: #1B6B93;
+  color: #fff;
+}
+.index-bg:hover{
+  background-color: #2b6f91;
+  box-shadow: 1px 1px 5px #1B6B93;
+  color: #fff;
+  
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

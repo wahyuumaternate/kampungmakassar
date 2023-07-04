@@ -7,6 +7,7 @@ use App\Http\Controllers\DatapendudukController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GambaranUmumController;
 use App\Http\Controllers\PekerjaanPendidikanController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SambutanLurahController;
 use App\Http\Controllers\VisiMisiController;
@@ -146,9 +147,9 @@ Route::get('/surat-rekomendasi-izin-kegiatan-keramaian', function () {
 });
 
 // Pengaduan Routes
-Route::get('/pengaduan', function () {
-    return view('pages.pengaduan.index');
-});
+Route::get('/pengaduan',[PengaduanController::class,'frontEnd'])->name('pengaduan');
+Route::post('/pengaduan',[PengaduanController::class,'store'])->name('pengaduan.store');
+Route::get('/reload',[PengaduanController::class,'reload']);
 
 // profile
 Route::middleware('auth')->group(function () {

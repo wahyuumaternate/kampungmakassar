@@ -5,13 +5,25 @@
     @include('layouts.header')
     {{-- @include('layouts.hero') --}}
 @endsection
+<!-- ======= breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+                <li><a href="/">Beranda</a></li>
+                <li><a href="">Profil Kelurahan</a></li>
+                <li>Gambaran Umum</li>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End breadcrumbs Section -->
 
 <!-- ======= Gambaran UMUM Section ======= -->
 <section id="blog" class="blog">
     <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Gambaran Umum</h2>
-        </div>
+       
         @foreach ($gambaranumum as $gu)
             <p>{!! $gu->isi !!}</p>
         @endforeach
