@@ -8,6 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 class="mb-2 page-title">Pengaduan Belum Terkirim</h2>
+
                 <div class="row my-4">
                     <!-- Small table -->
                     <div class="col-md-12">
@@ -22,7 +23,7 @@
                                             <th><strong>Email</strong></th>
                                             <th><strong>Jenis Pengaduan</strong></th>
                                             <th><strong>Lampiran</strong></th>
-                                            <th><strong>Aprove</strong></th>
+                                            <th><strong>Status</strong></th>
                                             <th><strong>Action</strong></th>
                                         </tr>
                                     </thead>
@@ -39,9 +40,10 @@
                                                             class="fe fe-download"></i> Download</a></td>
                                                 <td>
                                                     @if ($pengaduan->aprove == 1)
-                                                        <span class="dot dot-lg bg-success mr-2"></span>
+                                                        <span class="badge badge-pill badge-success">Terverifikasi</span>
                                                     @else
-                                                        <span class="dot dot-lg bg-danger mr-2"></span>
+                                                        <span class="badge badge-pill badge-danger">Belum
+                                                            Terverifikasi</span>
                                                     @endif
                                                 </td>
                                                 <td>
@@ -51,32 +53,43 @@
                                                         <span class="text-muted sr-only">Action</span>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        @if ($pengaduan->aprove == 1)
-                                                            <a href="{{ route('pengaduan.edit', $pengaduan->slug) }}"
-                                                                class="btn btn-primary dropdown-item"><i
-                                                                    class="fe fe-send fe-16"></i>
-                                                                Kirim</a>
-                                                        @endif
+                                                        @can('isAdmin')
+                                                            @if ($pengaduan->aprove == 1)
+                                                                <a href="{{ route('pengaduan.edit', $pengaduan->id) }}"
+                                                                    class="btn btn-primary dropdown-item"><i
+                                                                        class="fe fe-send fe-16"></i>
+                                                                    Kirim</a>
+                                                            @endif
+                                                            <a href="{{ route('pengaduan.edit', $pengaduan->id) }}"
+                                                                class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
+                                                                Detail</a>
+                                                            <form class="d-flex" method="POST"
+                                                                action="{{ route('pengaduan.delete', $pengaduan->id) }}">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button class="btn btn-danger dropdown-item"
+                                                                    onclick="return confirm('anda yakin ingin menghapus berita ini secara permanen?');event.preventDefault();
+                                                                "><i
+                                                                        class="fe fe-trash-2"></i> Hapus</button>
+                                                            </form>
+                                                        @endcan
+                                                        @can('isLurah')
+                                                            @if ($pengaduan->aprove == 0)
+                                                                <form class="d-flex" method="POST"
+                                                                    action="{{ route('aprove', $pengaduan->id) }}">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    <button
+                                                                        class="btn btn-success dropdown-item"><i
+                                                                            class="fe fe-check-circle"></i>
+                                                                        Verifikasi</button>
+                                                                </form>
+                                                            @endif
 
-                                                        <a href="{{ route('pengaduan.edit', $pengaduan->slug) }}"
-                                                            class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
-                                                            Detail</a>
-                                                        <form class="d-flex" method="POST"
-                                                            action="{{ route('pengaduan.delete', $pengaduan->slug) }}">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button class="btn btn-danger dropdown-item"
-                                                                onclick="return confirm('anda yakin ingin menghapus berita ini secara permanen?');event.preventDefault();
-                                                            "><i
-                                                                    class="fe fe-trash-2"></i> Hapus</button>
-                                                        </form>
-                                                        {{-- <a class="dropdown-item" href="#">Edit</a>
-                                                            <a class="btn btn-danger d-flex dropdown-item"
-                                                                    href="{{ route('berita.delete', $berita->slug) }}"
-                                                                    onclick="return confirm('anda yakin ingin menghapus berita?');event.preventDefault();
-                                                        "><i
-                                                                        class="fe fe-trash-2"></i> Hapus</a>
-                                                    <a class="dropdown-item" href="#">Remove</a> --}}
+                                                            <a href="{{ route('pengaduan.edit', $pengaduan->id) }}"
+                                                                class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
+                                                                Detail</a>
+                                                        @endcan
                                                     </div>
                                                 </td>
                                             </tr>

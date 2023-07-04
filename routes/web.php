@@ -30,6 +30,12 @@ use Illuminate\Support\Facades\Route;
 // Beranda Routes
 Route::get('/', [BerandaController::class,'index'])->name('home');
 
+
+// lurah
+Route::prefix('administrator')->middleware(['auth','is_lurah'])->group(function () {
+    Route::put('/aprove/{pengaduan}',[DashboardController::class,'aprove'])->name('aprove');
+});
+
 // dashboard
 Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
     

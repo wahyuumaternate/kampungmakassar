@@ -29,7 +29,7 @@
             </div>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <small>Pengaduan Akan Di Validasi Dan Di Kirim Ke Email Anda</small> <br>
-                <small>Mungkin Membutuhkan Waktu. Anda Dapat Langsung Pergi Ke Kantor Kelurahan</small>
+                <small>Proses Mungkin Membutuhkan Waktu.</small>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif

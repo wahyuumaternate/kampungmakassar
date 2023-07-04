@@ -37,10 +37,11 @@
                                                 <td>{{ $pengaduan->email }}</td>
                                                 <td>{{ $pengaduan->jenis_pengaduan }}</td>
                                                 <td><a download="lampiran_pengaduan_{{ $pengaduan->nama }}" class="btn btn-success" href="{{ url('storage/' . $pengaduan->lampiran) }}"><i class="fe fe-download"></i> Download</a></td>
-                                                <td>@if ($pengaduan->aprove == 1)
-                                                    <span class="dot dot-lg bg-success mr-2"></span>
-                                                    @else
-                                                        <span class="dot dot-lg bg-danger mr-2"></span>
+                                                <td>
+                                                    @if ($pengaduan->aprove == 1)
+                                                     <span class="badge badge-pill badge-success">Terverifikasi</span>
+                                                     @else
+                                                     <span class="badge badge-pill badge-danger">Belum Terverifikasi</span>
                                                     @endif
                                                 </td>
                                                 <td>
