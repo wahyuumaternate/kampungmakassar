@@ -36,6 +36,7 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/',[DashboardController::class,'index'])->middleware(['verified'])->name('dashboard');
     // kependudukan
     Route::get('/data-penduduk', [DatapendudukController::class,'index'])->name('datapenduduk.index');
+    Route::get('/data-penduduk/export', [DatapendudukController::class,'export'])->name('datapenduduk.export');
     Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
     Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
     Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');

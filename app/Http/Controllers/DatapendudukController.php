@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\DatapendudukExport;
 use App\Models\Berita;
 use App\Models\Datapenduduk;
 use App\Models\Pekerjaan;
 use App\Models\Pendidikan;
 use App\Models\Rt;
 use App\Models\Rw;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DatapendudukController extends Controller
@@ -133,4 +135,11 @@ class DatapendudukController extends Controller
         Datapenduduk::destroy($datapenduduk->id);
         return redirect()->route('datapenduduk.index')->with('success','Data Penduduk Berhasil Di Hapus');
     }
+
+    public function export()
+    {
+        return (new DatapendudukExport)->download('datapenduduk-'.Carbon::now()->timestamp.'.xlsx');
+    }
+
+
 }

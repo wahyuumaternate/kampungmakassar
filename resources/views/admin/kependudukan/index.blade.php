@@ -16,6 +16,7 @@
                                 <div class="card-header">
                                     <a href="{{ route('datapenduduk.tambah') }}" class="btn btn-primary"><i class="fe fe-file-plus fe-16"></i> Tambah
                                         Data Penduduk</a>
+                                    <a href="{{ route('datapenduduk.export') }}" class="btn btn-success text-light"><i class="fe fe-download fe-16"></i> Download Data Penduduk</a>
                                 </div>
                                 <!-- table -->
                                 <table class="table datatables" id="dataTable-1">
