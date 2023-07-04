@@ -14,7 +14,13 @@ class PengaduanController extends Controller
   
     function index() {
         return view('admin.pengaduan.index',[
-            'pengaduan'=> Pengaduan::all(),
+            'pengaduan'=> Pengaduan::where('terkirim',0)->get(),
+        ]);
+    }
+
+    function terkirim() {
+        return view('admin.pengaduan.terkirim',[
+            'pengaduan'=> Pengaduan::where('terkirim',1)->get(),
         ]);
     }
 

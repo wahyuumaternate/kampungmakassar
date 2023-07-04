@@ -84,6 +84,7 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/pengaduan', [PengaduanController::class,'index'])->name('pengaduan.index');
     Route::get('/pengaduann', [PengaduanController::class,''])->name('pengaduan.delete');
     Route::get('/pengaduannn', [PengaduanController::class,''])->name('pengaduan.edit');
+    Route::get('/pengaduan/terkirim', [PengaduanController::class,'terkirim'])->name('pengaduan.terkirim');
     
 });
 // end dashboard

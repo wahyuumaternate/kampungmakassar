@@ -76,11 +76,14 @@
             <li class="nav-item dropdown">
                 <a href="#pengaduan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-mail fe-16"></i>
-                    <span class="ml-3 item-text">Pengaduan</span>
+                    <span class="ml-3 item-text">Pengaduan Masyarakat</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="pengaduan">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('pengaduan.index') }}"><span class="ml-1 item-text">Semua Pengaduan</span></a>
+                        <a class="nav-link pl-3" href="{{ route('pengaduan.index') }}"><span class="ml-1 item-text">Pengaduan Belum Terkirim</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{ route('pengaduan.terkirim') }}"><span class="ml-1 item-text">Pengaduan Terkirim</span></a>
                     </li>
                 </ul>
             </li>

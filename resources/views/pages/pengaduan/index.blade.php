@@ -94,9 +94,10 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Lampiran</label>
-                        <input class="form-control @error('lampiran') is-invalid @enderror" type="file"
+                        <label for="lampiran" class="form-label">Lampiran</label>
+                        <input id="lampiran" class="form-control @error('lampiran') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="lampiran">
+                        <small class="text-muted">Max size 2mb. format : pdf, docs, png, jpg, jpeg</small>
                         @error('lampiran')
                             <span class="invalid-feedback" role="alert">
                                 <small class="text-danger">{{ $message }}</small>

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('jenis_pengaduan');
             $table->text('deskripsi');
             $table->string('lampiran');
+            $table->tinyInteger('aprove')->default(0);
+            $table->tinyInteger('terkirim')->default(0);
             $table->timestamps();
         });
     }
