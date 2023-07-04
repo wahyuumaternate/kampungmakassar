@@ -79,6 +79,11 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/profil-kelurahan/gambaranumum', [GambaranUmumController::class,'edit'])->name('gambaranumum.index');
     Route::put('/profil-kelurahan/gambaranumum/{gambaranumum}/update', [GambaranUmumController::class,'update'])->name('gambaranumum.update');
     Route::post('/profil-kelurahan/gambaranumum/', [GambaranUmumController::class,'store'])->name('gambaranumum.store');
+    // pengaduan
+    Route::get('/pengaduan', [PengaduanController::class,'index'])->name('pengaduan.index');
+    Route::get('/pengaduann', [PengaduanController::class,''])->name('pengaduan.delete');
+    Route::get('/pengaduannn', [PengaduanController::class,''])->name('pengaduan.edit');
+    
 });
 // end dashboard
 

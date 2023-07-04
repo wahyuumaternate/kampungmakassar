@@ -80,7 +80,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="pengaduan">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Semua Pengaduan</span></a>
+                        <a class="nav-link pl-3" href="{{ route('pengaduan.index') }}"><span class="ml-1 item-text">Semua Pengaduan</span></a>
                     </li>
                 </ul>
             </li>

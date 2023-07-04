@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main',['title' => 'Pengaduan'])
 
 @section('body')
 @section('outmain')
@@ -20,6 +20,7 @@
 </section><!-- End breadcrumbs Section -->
 
 <section id="Pengaduan" class="blog">
+
     <div class="container" data-aos="fade-up">
         @if (Session::has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,7 +29,7 @@
             </div>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <small>Pengaduan Akan Di Validasi Dan Di Kirim Ke Email Anda</small> <br>
-                <small>Mungkin Membutuhkan Waktu Yang Lama Atau Anda Dapat Langsung Pergi Ke Kantor</small>
+                <small>Mungkin Membutuhkan Waktu. Anda Dapat Langsung Pergi Ke Kantor Kelurahan</small>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -103,24 +104,7 @@
                         @enderror
                     </div>
                     <div class="row mb-3">
-                        <div class="col-lg-6">
-                            <label for="formFileMultiple" class="form-label">Masukan Kode Captcha</label>
-                            <input class="form-control @error('captcha') is-invalid @enderror" type="text"
-                                id="formFileMultiple" name="captcha">
-                            @error('captcha')
-                                <span class="invalid-feedback" role="alert">
-                                    <small class="text-danger">{{ $message }}</small>
-                                </span>
-                            @enderror
-
-                        </div>
-                        <div class="col-lg-6">
-                            <label for="formFileMultiple" class="form-label">Kode Captcha</label>
-                            <div class="capctha w-100">
-                                {{-- <span>{!! captcha_img('math') !!}</span> --}}
-                                <a href="" class="btn index-bg text-light reload" id="reload">&#x21bb</a>
-
-                            </div>
+                        <div class="capctha w-100">
                         </div>
                     </div>
                     <div class="col-auto ">
@@ -135,4 +119,3 @@
 
 @include('layouts.footer')
 @endsection
-

@@ -149,7 +149,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">7</th>
+                                        <th scope="row">8</th>
                                         <td>56 S/D 65 Tahun</td>
                                         <td> {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->count() }}</td>
                                         <td> {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
@@ -158,7 +158,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">7</th>
+                                        <th scope="row">9</th>
                                         <td>> 65 Tahun</td>
                                         <td> {{ $penduduk->where('usia', '>=',65)->count() }}</td>
                                         <td> {{ $penduduk->where('usia', '>=',65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
