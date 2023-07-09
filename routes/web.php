@@ -36,6 +36,11 @@ Route::prefix('administrator')->middleware(['auth','is_lurah'])->group(function 
     Route::put('/aprove/{pengaduan}',[DashboardController::class,'aprove'])->name('aprove');
 });
 
+// admin
+Route::prefix('administrator')->middleware(['auth','is_admin'])->group(function () {
+    Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
+});
+
 // dashboard
 Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
     
@@ -43,7 +48,7 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     // kependudukan
     Route::get('/data-penduduk', [DatapendudukController::class,'index'])->name('datapenduduk.index');
     Route::get('/data-penduduk/export', [DatapendudukController::class,'export'])->name('datapenduduk.export');
-    Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
+    
     Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
     Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
     Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');

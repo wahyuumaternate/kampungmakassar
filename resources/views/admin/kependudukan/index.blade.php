@@ -14,9 +14,13 @@
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="card-header">
-                                    <a href="{{ route('datapenduduk.tambah') }}" class="btn btn-primary"><i class="fe fe-file-plus fe-16"></i> Tambah
-                                        Data Penduduk</a>
-                                    <a href="{{ route('datapenduduk.export') }}" class="btn btn-success text-light"><i class="fe fe-download fe-16"></i> Download Data Penduduk</a>
+                                    @can('isAdmin')
+                                        <a href="{{ route('datapenduduk.tambah') }}" class="btn btn-primary"><i
+                                                class="fe fe-file-plus fe-16"></i> Tambah
+                                            Data Penduduk</a>
+                                    @endcan
+                                    <a href="{{ route('datapenduduk.export') }}" class="btn btn-success text-light"><i
+                                            class="fe fe-download fe-16"></i> Download Data Penduduk</a>
                                 </div>
                                 <!-- table -->
                                 <table class="table datatables" id="dataTable-1">
@@ -52,8 +56,10 @@
                                                             action="{{ route('datapenduduk.delete', $penduduk->id) }}">
                                                             @csrf
                                                             @method('delete')
-                                                            <button class="btn btn-danger dropdown-item" onclick="return confirm('anda yakin ingin menghapus data penduduk {{ $penduduk->nama }} ini secara permanen?');event.preventDefault();
-                                                            "><i class="fe fe-trash-2"></i> Hapus</button>
+                                                            <button class="btn btn-danger dropdown-item"
+                                                                onclick="return confirm('anda yakin ingin menghapus data penduduk {{ $penduduk->nama }} ini secara permanen?');event.preventDefault();
+                                                            "><i
+                                                                    class="fe fe-trash-2"></i> Hapus</button>
                                                         </form>
                                                         {{-- <a class="dropdown-item" href="#">Edit</a>
                                                             <a class="btn btn-danger d-flex dropdown-item"
@@ -76,5 +82,4 @@
             </div> <!-- .col-12 -->
         </div> <!-- .row -->
     </div> <!-- .container-fluid -->
-    
 @endsection

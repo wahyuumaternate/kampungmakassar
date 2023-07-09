@@ -15,7 +15,6 @@
                             <div class="card-body">
                                 <div class="card-header">
                                     <a href="{{ route('datapenduduk.index') }}" class="btn btn-secondary"><i class="fe fe-arrow-left"></i> Kembali</a>
-                                    <small class="d-block mt-2 card-title text-danger">* Wajib Di isi</small>
                                 </div>
                                 {{-- form --}}
                                 <form action="{{ route('datapenduduk.update',$penduduk->id) }}" method="POST">
@@ -24,7 +23,7 @@
                                     <div class="row mb-3 mt-3">
 
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Rt <span class="text-danger">*</span></label>
+                                            <label for="simple-select2">Rt </label>
                                             <select class="form-control select2" id="simple-select2" name="id_rt"
                                                 autofocus required>
                                                 <optgroup label="-- Pilih Rt --">
@@ -35,7 +34,7 @@
                                             </select>
                                         </div> <!-- Rt -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Rw <span class="text-danger">*</span></label>
+                                            <label for="simple-select2">Rw </label>
                                             <select class="form-control select2" id="simple-select2" name="id_rw"
                                                 required>
                                                 <optgroup label="-- Pilih Rw --">
@@ -59,7 +58,7 @@
                                         </div> <!-- dusun -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="simpleinput">Alamat <span class="text-danger">*</span></label>
+                                                <label for="simpleinput">Alamat </label>
                                                 <input name="alamat" type="text" id="simpleinput" class="form-control @error('alamat') is-invalid @enderror"
                                                     value="{{ old('alamat',$penduduk->alamat) }}" placeholder="Alamat" required>
                                                     @error('alamat')
@@ -71,8 +70,7 @@
                                         </div> <!-- alamat -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="simpleinput">Nomor Kartu Keluarga <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="simpleinput">Nomor Kartu Keluarga </label>
                                                 <input type="number" id="simpleinput" class="form-control @error('no_kk') is-invalid @enderror"
                                                     value="{{ old('no_kk',$penduduk->no_kk) }}" placeholder="Nomor Kartu Keluarga"
                                                     name="no_kk" required>
@@ -85,8 +83,7 @@
                                         </div> <!-- no_kk -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="simpleinput">Nama Kepala Keluarga <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="simpleinput">Nama Kepala Keluarga </label>
                                                 <input type="text" id="simpleinput" class="form-control @error('nama_kepala_keluarga') is-invalid @enderror"
                                                     value="{{ old('nama_kepala_keluarga',$penduduk->nama_kepala_keluarga) }}"
                                                     placeholder="Nama Kepala Keluarga" name="nama_kepala_keluarga" required>
@@ -99,8 +96,7 @@
                                         </div> <!-- nama kepala keluarga -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="simpleinput">Nama Penduduk <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="simpleinput">Nama Penduduk </label>
                                                 <input type="text" id="simpleinput" class="form-control @error('nama') is-invalid @enderror"
                                                     value="{{ old('nama',$penduduk->nama) }}" name="nama" placeholder="Nama" required>
                                                     @error('nama')
@@ -112,8 +108,7 @@
                                         </div> <!-- nama -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="simpleinput">Nomor Induk Kependudukan <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="simpleinput">Nomor Induk Kependudukan </label>
                                                 <input type="number" id="simpleinput" class="form-control @error('nik') is-invalid @enderror"
                                                     value="{{ old('nik',$penduduk->nik) }}" name="nik" placeholder="Nik" required>
                                                     @error('nik')
@@ -124,8 +119,7 @@
                                             </div>
                                         </div> <!-- nik -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Jenis Kelamin <span
-                                                    class="text-danger">*</span></label>
+                                            <label for="simple-select2">Jenis Kelamin </label>
                                             <select class="form-control select2" id="simple-select2"name="jenis_kelamin"
                                                 required>
                                                 <optgroup label="-- Jenis Kelamin --">
@@ -135,8 +129,7 @@
                                             </select>
                                         </div> <!-- jenis kelamin -->
                                         <div class="form-group col-md-6">
-                                            <label for="hubungan">Hubungan Dengan Kepala Keluarga <span
-                                                    class="text-danger">*</span></label>
+                                            <label for="hubungan">Hubungan Dengan Kepala Keluarga </label>
                                             <select class="form-control select2" id="hubungan" name="hubungan" required>
                                                 <optgroup label="-- Hubungan --">
                                                     <option @if ($penduduk->hubungan == "Kepala Keluarga") {{ "selected" }} @endif value="Kepala Keluarga">Kepala Keluarga</option>
@@ -152,8 +145,7 @@
                                         </div> <!-- hubungan -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="tempat_lahir">Tempat Lahir <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="tempat_lahir">Tempat Lahir </label>
                                                 <input type="text" id="tempat_lahir" class="form-control @error('tempat_lahir') is-invalid @enderror"
                                                     value="{{ old('tempat_lahir',$penduduk->tempat_lahir) }}" name="tempat_lahir"
                                                     placeholder="Tempat Lahir" required>
@@ -166,8 +158,7 @@
                                         </div> <!-- tempat lahir -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="tanggal_lahir">Tanggal Lahir <span
-                                                        class="text-danger">*</span></label>
+                                                <label for="tanggal_lahir">Tanggal Lahir </label>
                                                 <input type="date" id="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror"
                                                     value="{{ old('tanggal_lahir',$penduduk->tanggal_lahir) }}" name="tanggal_lahir"
                                                     placeholder="Tanggal Lahir" required>
@@ -180,8 +171,8 @@
                                         </div> <!-- tanggal lahir -->
                                         <div class="form-group col-md-6">
                                             <div class="form-group mb-3">
-                                                <label for="usia">Usia <span class="text-danger">*</span></label>
-                                                <input type="text" id="usia" class="form-control @error('usia') is-invalid @enderror"
+                                                <label for="usia">Usia </label>
+                                                <input type="number" id="usia" class="form-control @error('usia') is-invalid @enderror"
                                                     value="{{ old('usia',$penduduk->usia) }}" name="usia" placeholder="Usia"
                                                     required>
                                                     @error('usia')
@@ -192,7 +183,7 @@
                                             </div>
                                         </div> <!-- usia -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Status <span class="text-danger">*</span></label>
+                                            <label for="simple-select2">Status </label>
                                             <select class="form-control select2" id="simple-select2" name="status"
                                                 required>
                                                 <optgroup label="-- Status --">
@@ -203,7 +194,7 @@
                                             </select>
                                         </div> <!-- status -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Agama <span class="text-danger">*</span></label>
+                                            <label for="simple-select2">Agama </label>
                                             <select class="form-control select2" id="simple-select2"
                                                 value="{{ old('agama') }}" name="agama" required>
                                                 <optgroup label="-- Agama --">
@@ -219,8 +210,7 @@
                                             </select>
                                         </div> <!-- agama -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Golongan Darah <span
-                                                    class="text-danger">*</span></label>
+                                            <label for="simple-select2">Golongan Darah </label>
                                             <select class="form-control select2" id="simple-select2"
                                                 name="golongan_darah" required>
                                                 <optgroup label="-- Golongan Darah --">
@@ -259,8 +249,7 @@
                                             </div>
                                         </div> <!-- etnis suku -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Pendidikan <span
-                                                    class="text-danger">*</span></label>
+                                            <label for="simple-select2">Pendidikan </label>
                                             <select class="form-control select2" id="simple-select2"
                                                 name="id_pendidikan">
                                                 <optgroup label="-- Pendidikan --">
@@ -271,8 +260,7 @@
                                             </select>
                                         </div> <!-- fpendidikan -->
                                         <div class="form-group col-md-6">
-                                            <label for="simple-select2">Pekerjaan <span
-                                                    class="text-danger">*</span></label>
+                                            <label for="simple-select2">Pekerjaan </label>
                                             <select class="form-control select2" id="simple-select2" name="id_pekerjaan">
                                                 <optgroup label="-- Pekerjaan --">
                                                     @foreach ($pekerjaan as $pekerjaan)

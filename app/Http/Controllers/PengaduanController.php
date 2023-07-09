@@ -32,8 +32,8 @@ class PengaduanController extends Controller
 
         $rules = $request->validate([
             'nama'=> 'required',
-            'nik'=> 'required',
-            'email'=> 'required',
+            'nik'=> 'required|numeric|digits:16',
+            'email'=> 'required|email:rfc,dns',
             'jenis_pengaduan'=> 'required',
             'deskripsi'=> 'required',
             'lampiran'=> 'required|mimes:doc,docx,pdf,jpeg,png,jpg|max:2048',

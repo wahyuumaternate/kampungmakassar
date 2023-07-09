@@ -39,7 +39,7 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <label for="exampleFormControlInput1" class="form-label">Nama</label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="Nama Lengkap" name="nama"
                             value="{{ old('nama') }}" autofocus>
@@ -50,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <label for="exampleFormControlInput1" class="form-label">Nomor Induk Kependudukan</label>
                         <input type="number" class="form-control @error('nik') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="NIK" name="nik" value="{{ old('nik') }}">
                         @error('nik')
@@ -60,7 +60,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="Email" name="email"
                             value="{{ old('email') }}">
@@ -71,6 +71,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Jenis Pengaduan</label>
                         <select class="form-select @error('jenis_pengaduan') is-invalid @enderror"
                             aria-label="Default select example" name="jenis_pengaduan">
                             <option selected value="">-- Pilih Jenis Pengaduan --</option>
