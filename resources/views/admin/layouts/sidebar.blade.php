@@ -49,7 +49,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="info-desa">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Rt & Rw</span></a>
+                        <a class="nav-link pl-3" href="{{ route('rt_rw') }}"><span class="ml-1 item-text">Rt & Rw</span></a>
                     </li>
                 </ul>
             </li>
@@ -128,23 +128,6 @@
         </ul>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item active dropdown">
-                <a href="#kelembagaan" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
-                    <i class="fe fe-award fe-16"></i>
-                    <span class="ml-3 item-text">Kelembagaan</span>
-                </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="kelembagaan">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">PKK</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">LPM</span></a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item active dropdown">
                 <a href="#pelayanan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-file-text fe-16"></i>
                     <span class="ml-3 item-text">Pelayanan</span>
@@ -159,6 +142,14 @@
                                 Kematian</span></a>
                     </li>
                 </ul>
+            </li>
+        </ul>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+                <a class="nav-link" href="{{ route('peta.index') }}">
+                    <i class="fe fe-map fe-16"></i>
+                    <span class="ml-3 item-text">Peta Kelurahan</span>
+                </a>
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">

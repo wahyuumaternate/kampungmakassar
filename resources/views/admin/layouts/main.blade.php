@@ -19,12 +19,7 @@
     <!-- Icons CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/dataTables.bootstrap4.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('admin/css/select2.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/dropzone.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/uppy.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/jquery.steps.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/jquery.timepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/quill.snow.css') }}"> --}}
+   
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/daterangepicker.css') }}">
     <!-- App CSS -->
@@ -34,6 +29,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
         integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{-- lafleat --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
     {{-- trix editor --}}
     <link rel="stylesheet" href="{{ asset('admin/css/trix.css') }}">
     <script type="text/javascript" src="{{ asset('admin/js/trix.js') }}"></script>

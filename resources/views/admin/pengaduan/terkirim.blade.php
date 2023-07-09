@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2 class="mb-2 page-title">Semua Pengaduan</h2>
+                <h2 class="mb-2 page-title">Pengaduan Terkirim</h2>
                 <div class="row my-4">
                     <!-- Small table -->
                     <div class="col-md-12">

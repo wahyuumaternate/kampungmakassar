@@ -55,7 +55,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         @can('isAdmin')
                                                             @if ($pengaduan->aprove == 1)
-                                                                <a href="{{ route('pengaduan.edit', $pengaduan->id) }}"
+                                                                <a href="{{ route('kirimEmail',$pengaduan->id) }}"
                                                                     class="btn btn-primary dropdown-item"><i
                                                                         class="fe fe-send fe-16"></i>
                                                                     Kirim</a>

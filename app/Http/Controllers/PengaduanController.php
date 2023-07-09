@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\kirimPengaduan;
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -45,5 +47,16 @@ class PengaduanController extends Controller
   
         Pengaduan::create($rules);
         return redirect()->route('pengaduan')->with('success','Berhasil Di Kirim');
+    }
+
+    public function kirimEmail($id) {
+
+        $data = Pengaduan::find($id);
+       
+        Mail::to($data->email)->send(new kirimPengaduan($data) );
+
+        $data->where('id', $data->id)->update(["terkirim" => 1]);
+
+        return redirect()->route('pengaduan.index')->with('success','Berhasil Di Kirim');
     }
 }

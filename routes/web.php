@@ -14,6 +14,8 @@ use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
+use App\Http\Controllers\infoKelurahanController;
+use App\Http\Controllers\PetaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +33,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BerandaController::class,'index'])->name('home');
 
 
+
+
 // lurah
-Route::prefix('administrator')->middleware(['auth','is_lurah'])->group(function () {
+Route::prefix('administrator/dashboard')->middleware(['auth','is_lurah'])->group(function () {
     Route::put('/aprove/{pengaduan}',[DashboardController::class,'aprove'])->name('aprove');
 });
 
 // admin
-Route::prefix('administrator')->middleware(['auth','is_admin'])->group(function () {
+Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group(function () {
     Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
+    Route::get('/kirim-email/{id}', [PengaduanController::class,'kirimEmail'])->name('kirimEmail');
+   
 });
 
 // dashboard
@@ -96,10 +102,22 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/pengaduann', [PengaduanController::class,''])->name('pengaduan.delete');
     Route::get('/pengaduannn', [PengaduanController::class,''])->name('pengaduan.edit');
     Route::get('/pengaduan/terkirim', [PengaduanController::class,'terkirim'])->name('pengaduan.terkirim');
+    // info Kelurahan
+    Route::get('/informasi-kelurahan/rt-rw', [infoKelurahanController::class,'rt_rw'])->name('rt_rw');
+    Route::post('/informasi-kelurahan/rt', [infoKelurahanController::class,'storeRt'])->name('rt.store');
+    Route::delete('/informasi-kelurahan/rt/{rt}', [infoKelurahanController::class,'destroyRt'])->name('rt.delete');
+    Route::post('/informasi-kelurahan/rw', [infoKelurahanController::class,'storeRw'])->name('rw.store');
+    Route::delete('/informasi-kelurahan/rw/{rw}', [infoKelurahanController::class,'destroyRw'])->name('rw.delete');
+    // peta
+    Route::get('/peta', [PetaController::class,'index'])->name('peta.index');
+    Route::post('/peta', [PetaController::class,'store'])->name('peta.store');
+    Route::delete('/peta/{peta}', [PetaController::class,'destroy'])->name('peta.delete');
+
     
 });
 // end dashboard
 
+Route::get('/peta', [PetaController::class,'front'])->name('peta');
 
 // Profile Routes
 Route::prefix('profil')->group(function () {
