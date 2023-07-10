@@ -71,7 +71,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <span class="h2 mb-0">186</span>
+                            <span class="h2 mb-0">{{ $pengaduan }}</span>
                             <p class="small text-muted mb-0">Pengaduan</p>
                         </div>
                         <div class="col-auto">

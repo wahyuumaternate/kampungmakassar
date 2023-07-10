@@ -49,7 +49,8 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="info-desa">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('rt_rw') }}"><span class="ml-1 item-text">Rt & Rw</span></a>
+                        <a class="nav-link pl-3" href="{{ route('rt_rw') }}"><span class="ml-1 item-text">Rt &
+                                Rw</span></a>
                     </li>
                 </ul>
             </li>
@@ -98,52 +99,54 @@
                 </ul>
             </li>
         </ul>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item active dropdown">
-                <a href="#profil-kelurahan" data-toggle="collapse" aria-expanded="false"
-                    class="dropdown-toggle nav-link">
-                    <i class="fe fe-book fe-16"></i>
-                    <span class="ml-3 item-text">Profil Kelurahan</span>
-                </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="profil-kelurahan">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('visimisi.index') }}"><span
-                                class="ml-1 item-text">Visi & Misi</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('sejarah.index') }}"><span
-                                class="ml-1 item-text">Sejarah</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('gambaranumum.index') }}"><span
-                                class="ml-1 item-text">Gambaran Umum</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('organisasi.index') }}"><span
-                                class="ml-1 item-text">Struktur
-                                Organisasi</span></a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item active dropdown">
-                <a href="#pelayanan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-file-text fe-16"></i>
-                    <span class="ml-3 item-text">Pelayanan</span>
-                </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="pelayanan">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
-                                Keterangan</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
-                                Kematian</span></a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        @can('isAdmin')
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+                <li class="nav-item active dropdown">
+                    <a href="#profil-kelurahan" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle nav-link">
+                        <i class="fe fe-book fe-16"></i>
+                        <span class="ml-3 item-text">Profil Kelurahan</span>
+                    </a>
+                    <ul class="collapse list-unstyled pl-4 w-100" id="profil-kelurahan">
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="{{ route('visimisi.index') }}"><span
+                                    class="ml-1 item-text">Visi & Misi</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="{{ route('sejarah.index') }}"><span
+                                    class="ml-1 item-text">Sejarah</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="{{ route('gambaranumum.index') }}"><span
+                                    class="ml-1 item-text">Gambaran Umum</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="{{ route('organisasi.index') }}"><span
+                                    class="ml-1 item-text">Struktur
+                                    Organisasi</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+                <li class="nav-item active dropdown">
+                    <a href="#pelayanan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                        <i class="fe fe-file-text fe-16"></i>
+                        <span class="ml-3 item-text">Pelayanan</span>
+                    </a>
+                    <ul class="collapse list-unstyled pl-4 w-100" id="pelayanan">
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
+                                    Keterangan</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
+                                    Kematian</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        @endcan
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <a class="nav-link" href="{{ route('peta.index') }}">

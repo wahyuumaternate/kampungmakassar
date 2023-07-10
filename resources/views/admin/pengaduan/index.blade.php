@@ -55,7 +55,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         @can('isAdmin')
                                                             @if ($pengaduan->aprove == 1)
-                                                                <a href="{{ route('kirimEmail',$pengaduan->id) }}"
+                                                                <a href="{{ route('kirimEmail', $pengaduan->id) }}"
                                                                     class="btn btn-primary dropdown-item"><i
                                                                         class="fe fe-send fe-16"></i>
                                                                     Kirim</a>
@@ -63,15 +63,6 @@
                                                             <a href="{{ route('pengaduan.edit', $pengaduan->id) }}"
                                                                 class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
                                                                 Detail</a>
-                                                            <form class="d-flex" method="POST"
-                                                                action="{{ route('pengaduan.delete', $pengaduan->id) }}">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button class="btn btn-danger dropdown-item"
-                                                                    onclick="return confirm('anda yakin ingin menghapus berita ini secara permanen?');event.preventDefault();
-                                                                "><i
-                                                                        class="fe fe-trash-2"></i> Hapus</button>
-                                                            </form>
                                                         @endcan
                                                         @can('isLurah')
                                                             @if ($pengaduan->aprove == 0)
@@ -79,8 +70,7 @@
                                                                     action="{{ route('aprove', $pengaduan->id) }}">
                                                                     @csrf
                                                                     @method('PUT')
-                                                                    <button
-                                                                        class="btn btn-success dropdown-item"><i
+                                                                    <button class="btn btn-success dropdown-item"><i
                                                                             class="fe fe-check-circle"></i>
                                                                         Verifikasi</button>
                                                                 </form>
@@ -90,6 +80,16 @@
                                                                 class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
                                                                 Detail</a>
                                                         @endcan
+                                                        <form class="d-flex" method="POST"
+                                                            action="{{ route('pengaduan.delete', $pengaduan->id) }}">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button class="btn btn-danger dropdown-item"
+                                                                onclick="return confirm('anda yakin ingin menghapus berita ini secara permanen?');event.preventDefault();
+                                                                "><i
+                                                                    class="fe fe-trash-2"></i> Hapus</button>
+                                                        </form>
+
                                                     </div>
                                                 </td>
                                             </tr>

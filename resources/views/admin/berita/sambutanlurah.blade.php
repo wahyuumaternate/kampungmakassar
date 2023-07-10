@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('admin.layouts.main',['title' => 'Sambutan Lurah'])
 @section('headerside')
     @include('admin.layouts.header')
     @include('admin.layouts.sidebar')

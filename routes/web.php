@@ -44,47 +44,6 @@ Route::prefix('administrator/dashboard')->middleware(['auth','is_lurah'])->group
 Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group(function () {
     Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
     Route::get('/kirim-email/{id}', [PengaduanController::class,'kirimEmail'])->name('kirimEmail');
-   
-});
-
-// dashboard
-Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
-    
-    Route::get('/',[DashboardController::class,'index'])->middleware(['verified'])->name('dashboard');
-    // kependudukan
-    Route::get('/data-penduduk', [DatapendudukController::class,'index'])->name('datapenduduk.index');
-    Route::get('/data-penduduk/export', [DatapendudukController::class,'export'])->name('datapenduduk.export');
-    
-    Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
-    Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
-    Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
-    Route::delete('/data-penduduk/{datapenduduk}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
-    // pekerjaan & pendidikan
-    Route::get('kependudukan/pekerjaan', [PekerjaanPendidikanController::class,'pekerjaan'])->name('pekerjaan.index');
-    Route::get('kependudukan/pendidikan', [PekerjaanPendidikanController::class,'pendidikan'])->name('pendidikan.index');
-    // pekerjaan
-    Route::post('/pekerjaan-pekerjaan', [PekerjaanPendidikanController::class,'strorePekerjaan'])->name('pekerjaan.store');
-    Route::delete('/pekerjaan-pekerjaan/{pekerjaan}', [PekerjaanPendidikanController::class,'destroyPekerjaan'])->name('pekerjaan.delete');
-    // pendidikan
-    Route::post('/pendidikan-pendidikan', [PekerjaanPendidikanController::class,'strorePendidikan'])->name('pendidikan.store');
-    Route::delete('/pendidikan-pendidikan/{pendidikan}', [PekerjaanPendidikanController::class,'destroyPendidikan'])->name('pendidikan.delete');
-    //berita
-    Route::get('/berita/semua-berita', [BeritaController::class,'index'])->name('berita.index');
-    Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->name('berita.tambah');
-    Route::post('/berita/tambah-berita/store', [BeritaController::class,'store'])->name('berita.store');
-    Route::get('/berita/{berita:slug}/edit-berita', [BeritaController::class,'edit'])->name('berita.edit');
-    Route::put('/berita/{berita:slug}/edit-berita', [BeritaController::class,'update'])->name('berita.update');
-    Route::delete('/berita/{berita:slug}', [BeritaController::class,'destroy'])->name('berita.delete');
-    //struktur organisani
-    Route::get('/profil-kelurahan/struktur-organisasi', [StrukturOrganisasiController::class,'index'])->name('organisasi.index');
-    Route::post('/profil-kelurahan/tambah-struktur-organisasi/store', [StrukturOrganisasiController::class,'store'])->name('organisasi.store');
-    Route::get('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'edit'])->name('organisasi.edit');
-    Route::put('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->name('organisasi.update');
-    Route::delete('/profil-kelurahan/{struktur_organisasi:slug}', [StrukturOrganisasiController::class,'destroy'])->name('organisasi.delete');
-    // sambutan Lurah
-    Route::get('/sambutan-lurah', [SambutanLurahController::class,'edit'])->name('lurah.index'); 
-    Route::post('/sambutan-lurah', [SambutanLurahController::class,'store'])->name('lurah.store'); 
-    Route::put('/sambutan-lurah/{sambutan}/update', [SambutanLurahController::class,'update'])->name('lurah.update');
     // visimisi
     Route::get('/profil-kelurahan/visi-misi', [VisiMisiController::class,'edit'])->name('visimisi.index');
     Route::put('/profil-kelurahan/visi-misi/{visiMisi}/update', [VisiMisiController::class,'update'])->name('visimisi.update');
@@ -97,10 +56,52 @@ Route::prefix('administrator/dashboard')->middleware('auth')->group(function () 
     Route::get('/profil-kelurahan/gambaranumum', [GambaranUmumController::class,'edit'])->name('gambaranumum.index');
     Route::put('/profil-kelurahan/gambaranumum/{gambaranumum}/update', [GambaranUmumController::class,'update'])->name('gambaranumum.update');
     Route::post('/profil-kelurahan/gambaranumum/', [GambaranUmumController::class,'store'])->name('gambaranumum.store');
+    //struktur organisani
+    Route::get('/profil-kelurahan/struktur-organisasi', [StrukturOrganisasiController::class,'index'])->name('organisasi.index');
+    Route::post('/profil-kelurahan/tambah-struktur-organisasi/store', [StrukturOrganisasiController::class,'store'])->name('organisasi.store');
+    Route::get('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'edit'])->name('organisasi.edit');
+    Route::put('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->name('organisasi.update');
+    Route::delete('/profil-kelurahan/{struktur_organisasi:slug}', [StrukturOrganisasiController::class,'destroy'])->name('organisasi.delete');
+    // pekerjaan & pendidikan
+    Route::get('kependudukan/pekerjaan', [PekerjaanPendidikanController::class,'pekerjaan'])->name('pekerjaan.index');
+    Route::get('kependudukan/pendidikan', [PekerjaanPendidikanController::class,'pendidikan'])->name('pendidikan.index');
+    // pekerjaan
+    Route::post('/pekerjaan-pekerjaan', [PekerjaanPendidikanController::class,'strorePekerjaan'])->name('pekerjaan.store');
+    Route::delete('/pekerjaan-pekerjaan/{pekerjaan}', [PekerjaanPendidikanController::class,'destroyPekerjaan'])->name('pekerjaan.delete');
+    // pendidikan
+    Route::post('/pendidikan-pendidikan', [PekerjaanPendidikanController::class,'strorePendidikan'])->name('pendidikan.store');
+    Route::delete('/pendidikan-pendidikan/{pendidikan}', [PekerjaanPendidikanController::class,'destroyPendidikan'])->name('pendidikan.delete');
+    // data penduduk
+    Route::post('/data-penduduk/tambah/store', [DatapendudukController::class,'store'])->name('datapenduduk.store');
+    Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
+    Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
+    Route::delete('/data-penduduk/{datapenduduk}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
+   
+});
+
+// dashboard
+Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
+    
+    Route::get('/',[DashboardController::class,'index'])->middleware(['verified'])->name('dashboard');
+    // kependudukan
+    Route::get('/data-penduduk', [DatapendudukController::class,'index'])->name('datapenduduk.index');
+    Route::get('/data-penduduk/export', [DatapendudukController::class,'export'])->name('datapenduduk.export');  
+    //berita
+    Route::get('/berita/semua-berita', [BeritaController::class,'index'])->name('berita.index');
+    Route::get('/berita/tambah-berita', [BeritaController::class,'create'])->name('berita.tambah');
+    Route::post('/berita/tambah-berita/store', [BeritaController::class,'store'])->name('berita.store');
+    Route::get('/berita/{berita:slug}/edit-berita', [BeritaController::class,'edit'])->name('berita.edit');
+    Route::put('/berita/{berita:slug}/edit-berita', [BeritaController::class,'update'])->name('berita.update');
+    Route::delete('/berita/{berita:slug}', [BeritaController::class,'destroy'])->name('berita.delete');
+    
+    // sambutan Lurah
+    Route::get('/sambutan-lurah', [SambutanLurahController::class,'edit'])->name('lurah.index'); 
+    Route::post('/sambutan-lurah', [SambutanLurahController::class,'store'])->name('lurah.store'); 
+    Route::put('/sambutan-lurah/{sambutan}/update', [SambutanLurahController::class,'update'])->name('lurah.update');
     // pengaduan
     Route::get('/pengaduan', [PengaduanController::class,'index'])->name('pengaduan.index');
-    Route::get('/pengaduann', [PengaduanController::class,''])->name('pengaduan.delete');
-    Route::get('/pengaduannn', [PengaduanController::class,''])->name('pengaduan.edit');
+    Route::delete('/pengaduann/{pengaduan}', [PengaduanController::class,'destroy'])->name('pengaduan.delete');
+    Route::get('/pengaduan/{pengaduan}/detail', [PengaduanController::class,'show'])->name('pengaduan.edit');
     Route::get('/pengaduan/terkirim', [PengaduanController::class,'terkirim'])->name('pengaduan.terkirim');
     // info Kelurahan
     Route::get('/informasi-kelurahan/rt-rw', [infoKelurahanController::class,'rt_rw'])->name('rt_rw');

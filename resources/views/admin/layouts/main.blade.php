@@ -9,7 +9,7 @@
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
-    <title>{{ @$title != ''  ? "$title - " : '' }} Admin Panel</title>
+    <title>{{ @$title != ''  ? "$title - " : '' }} Halaman Admin Website Kelurahan Makassar Barat</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/simplebar.css') }}">
     <!-- Fonts CSS -->

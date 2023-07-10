@@ -17,6 +17,7 @@ class DashboardController extends Controller
                 'datapenduduk'=> Datapenduduk::all()->count(),
                 'rt'=> Rt::all()->count(),
                 'rw'=> Rw::all()->count(),
+                'pengaduan'=> Pengaduan::all()->count(),
             ]);
     }
 

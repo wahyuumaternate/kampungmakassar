@@ -59,4 +59,17 @@ class PengaduanController extends Controller
 
         return redirect()->route('pengaduan.index')->with('success','Berhasil Di Kirim');
     }
+
+    public function destroy(Pengaduan $pengaduan)
+    {
+        Pengaduan::destroy($pengaduan->id);
+        return redirect()->route('pengaduan.index')->with('success','Berhasil Di Hapus');
+    }
+
+    public function show(Pengaduan $pengaduan)
+    {
+        return view('admin.pengaduan.show',[
+            'pengaduan'=>$pengaduan
+        ]);
+    }
 }
