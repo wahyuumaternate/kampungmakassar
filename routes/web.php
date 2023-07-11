@@ -47,9 +47,6 @@ Route::prefix('/pengguna')->middleware('guest:masyarakat,web')->group(function (
     Route::post('/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin');
 });
 
-
-
-
 // lurah
 Route::prefix('administrator/dashboard')->middleware(['auth','is_lurah'])->group(function () {
     Route::put('/aprove/{pengaduan}',[DashboardController::class,'aprove'])->name('aprove');
