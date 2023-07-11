@@ -26,6 +26,7 @@
     <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
 
     {{-- lafleat --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -65,6 +66,7 @@
     <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
 
     <!-- Template Main JS File -->
+    
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 

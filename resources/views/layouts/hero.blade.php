@@ -6,7 +6,7 @@
           <!-- Slide 1 -->
           <div class="carousel-item active">
               <div class="carousel-container">
-                  <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di Website <span>Kampung
+                  <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di Website <span>Kelurahan
                           Makassar</span></h2>
                   <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi
                       ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea

@@ -15,6 +15,7 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\infoKelurahanController;
+use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PetaController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,11 @@ use Illuminate\Support\Facades\Route;
 // Beranda Routes
 Route::get('/', [BerandaController::class,'index'])->name('home');
 
-
+Route::get('/masyarakat/login', [MasyarakatController::class,'login'])->name('mas_login')->middleware('guest:masyarakat');
+Route::get('/masyarakat/register', [MasyarakatController::class,'register'])->name('mas_register')->middleware('guest:masyarakat');
+Route::post('/masyarakat/register', [MasyarakatController::class,'store'])->name('prosesregister')->middleware('guest:masyarakat');
+Route::post('/masyarakat/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin')->middleware('guest:masyarakat');
+Route::get('/masyarakat/logout', [MasyarakatController::class,'logout'])->name('mas_logout')->middleware('auth:masyarakat');
 
 
 // lurah

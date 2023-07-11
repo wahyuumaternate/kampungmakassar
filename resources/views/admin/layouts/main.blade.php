@@ -62,7 +62,7 @@
                     </div> <!-- .col-12 -->
                 </div> <!-- .row -->
             </div> <!-- .container-fluid -->
-            <footer><p class="text-center mt-5 mb-3 text-muted">© Copyright Kampung Makassar Barat 2020. All Rights Reserved</p></footer>
+            @include('admin.layouts.footer')
         </main> <!-- main -->
     </div> <!-- .wrapper -->
     <script src="{{ asset('admin/js/jquery.min.js') }}"></script>

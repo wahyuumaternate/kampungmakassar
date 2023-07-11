@@ -34,7 +34,8 @@
                 </div>
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Masuk</button>
-                <p class="mt-5 mb-3 text-muted">© Copyright Kampung Makassar Barat 2020. All Rights Reserved</p>
+                
+                <p class="mt-5 mb-3 text-muted">© Copyright Kelurahan Makassar Barat 2023. All Rights Reserved</p>
             </form>
         </div>
     </div>
