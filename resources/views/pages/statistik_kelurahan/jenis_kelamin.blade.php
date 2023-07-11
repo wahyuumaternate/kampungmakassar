@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main',['title' => 'Statistik Berdasarkan Jenis Kelamin'])
 
 @section('body')
 @section('outmain')

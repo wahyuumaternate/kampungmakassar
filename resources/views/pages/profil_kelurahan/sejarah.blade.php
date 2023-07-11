@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main',['title' => 'Sejarah Kelurahan'])
 
 @section('body')
 @section('outmain')

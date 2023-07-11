@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Pengaduan'])
+@extends('layouts.main', ['title' => 'Pelayanan'])
 
 @section('body')
 @section('outmain')

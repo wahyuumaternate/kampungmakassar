@@ -18,7 +18,6 @@ use App\Http\Controllers\infoKelurahanController;
 use App\Http\Controllers\JenisPelayananController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PelayananController;
-use App\Http\Controllers\PengantarSKCKController;
 use App\Http\Controllers\PetaController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +39,7 @@ Route::prefix('/pengguna')->middleware('auth:masyarakat')->group(function () {
     Route::get('/logout', [MasyarakatController::class,'logout'])->name('mas_logout');
     Route::get('/profil', [MasyarakatController::class,'profil'])->name('mas_profil');
 });
+
 Route::prefix('/pengguna')->middleware('guest:masyarakat,web')->group(function () {
     Route::get('/login', [MasyarakatController::class,'login'])->name('login');
     Route::get('/register', [MasyarakatController::class,'register'])->name('mas_register');
@@ -174,29 +174,6 @@ Route::prefix('pelayanan')->group(function () {
     Route::post('/',[PelayananController::class,'store'])->name('pelayanan.store')->middleware('auth:masyarakat');
 });
 
-
-
-
-// Pelayannan Routes
-Route::get('/surat-keterangan-kelahiran', function () {
-    return view('pages.pelayannan.surat_kelahiran');
-});
-
-Route::get('/surat-keterangan-kematian', function () {
-    return view('pages.pelayannan.surat_kematian');
-});
-
-Route::get('/surat-pengantar-pembuatan-ktp', function () {
-    return view('pages.pelayannan.pembuatan_ktp');
-});
-
-Route::get('/surat-pengantar-pembuatan-kk', function () {
-    return view('pages.pelayannan.pembuatan_kk');
-});
-
-Route::get('/surat-rekomendasi-izin-kegiatan-keramaian', function () {
-    return view('pages.pelayannan.izin_keramaian');
-});
 
 // Pengaduan Routes
 Route::get('/pengaduan',[PengaduanController::class,'frontEnd'])->name('pengaduan');

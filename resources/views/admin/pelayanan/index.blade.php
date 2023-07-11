@@ -1,4 +1,4 @@
-@extends('admin.layouts.main', ['title' => 'Data Penduduk'])
+@extends('admin.layouts.main', ['title' => 'Pelayanan'])
 @section('headerside')
     @include('admin.layouts.header')
     @include('admin.layouts.sidebar')
@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2 class="mb-2 page-title">Data Penduduk</h2>
+                <h2 class="mb-2 page-title">Pelayanan</h2>
                 <div class="row my-4">
                     <!-- Small table -->
                     <div class="col-md-12">
@@ -23,6 +23,7 @@
                                             <th><strong>Foto Copy KK</strong></th>
                                             <th><strong>Foto Copy KTP</strong></th>
                                             <th><strong>Surat Pernyataan</strong></th>
+                                            <th><strong>Surat Pengantar dari Ketua RT/RW setempat</strong></th>
                                             <th><strong>Jenis Pelayanan</strong></th>
                                             <th><strong>Action</strong></th>
                                         </tr>
@@ -51,6 +52,11 @@
                                                     @else
 
                                                     @endif
+                                                </td>
+                                                <td>
+                                                    <a download="" class="btn btn-success"
+                                                            href="{{ url('storage/' . $pel->pentantar_rt_rw) }}"><i
+                                                                class="fe fe-download"></i> Download</a>
                                                 </td>
                                                 <td>{{ $pel->jenisPelayanan->nama_pelayanan }}</td>
                                                 <td>

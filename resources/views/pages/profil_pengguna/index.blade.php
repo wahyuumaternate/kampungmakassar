@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main',['title' => 'Profil Pengguna'])
 
 @section('body')
 @section('outmain')
