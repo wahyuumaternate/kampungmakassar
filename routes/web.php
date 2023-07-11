@@ -94,6 +94,7 @@ Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group
     Route::post('/jenis-pelayanan', [JenisPelayananController::class,'store'])->name('jenis_pelayanan.store');
     Route::delete('/jenis-pelayanan/{jenis_pelayanan}', [JenisPelayananController::class,'destroy'])->name('pelayanan.delete');
     Route::delete('/pelayanan/{pelayanan}', [PelayananController::class,'destroy'])->name('pelayanan.delete');
+    Route::get('/pelayanan/{pelayanan}/detail', [PelayananController::class,'show'])->name('pelayanan.show');
    
 });
 

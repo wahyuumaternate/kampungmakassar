@@ -45,6 +45,12 @@ class PelayananController extends Controller
         ]);
     }
 
+    public function show(Pelayanan $pelayanan) {
+        return view('admin.pelayanan.detail',[
+            'pelayanan' => $pelayanan
+        ]);
+    }
+
     public function destroy(Pelayanan $pelayanan)
     {
         if ($pelayanan->fc_kk) {

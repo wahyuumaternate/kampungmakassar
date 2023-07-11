@@ -66,9 +66,9 @@
                                                         <span class="text-muted sr-only">Action</span>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="{{ route('datapenduduk.edit', $pel->id) }}"
-                                                            class="btn btn-primary dropdown-item"><i class="fe fe-edit"></i>
-                                                            Edit</a>
+                                                        <a href="{{ route('pelayanan.show', $pel->id) }}"
+                                                            class="btn btn-primary dropdown-item"><i class="fe fe-eye"></i>
+                                                            Detail</a>
                                                         <form class="d-flex" method="POST"
                                                             action="{{ route('pelayanan.delete', $pel->id) }}">
                                                             @csrf
