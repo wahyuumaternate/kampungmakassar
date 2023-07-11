@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class BeritaSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class BeritaSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Berita::factory()->create([
+        DB::table('beritas')->insert([
             'judul' => 'Peresmian dan Penyerahan Website Kelurahan Seli',
             'slug' => 'peresmina-dan-penyerahan-website-kelurahan-seli',
             'gambar' => 'beritaGambar/15zc5vqsdBqISEA9i6ieeupe3ZAtqIpgePq0OwYv.jpg',

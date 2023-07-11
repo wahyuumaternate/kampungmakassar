@@ -16,6 +16,7 @@ use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\infoKelurahanController;
 use App\Http\Controllers\MasyarakatController;
+use App\Http\Controllers\PengantarSKCKController;
 use App\Http\Controllers\PetaController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,11 +34,18 @@ use Illuminate\Support\Facades\Route;
 // Beranda Routes
 Route::get('/', [BerandaController::class,'index'])->name('home');
 
-Route::get('/masyarakat/login', [MasyarakatController::class,'login'])->name('mas_login')->middleware('guest:masyarakat');
-Route::get('/masyarakat/register', [MasyarakatController::class,'register'])->name('mas_register')->middleware('guest:masyarakat');
-Route::post('/masyarakat/register', [MasyarakatController::class,'store'])->name('prosesregister')->middleware('guest:masyarakat');
-Route::post('/masyarakat/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin')->middleware('guest:masyarakat');
-Route::get('/masyarakat/logout', [MasyarakatController::class,'logout'])->name('mas_logout')->middleware('auth:masyarakat');
+Route::prefix('/pengguna')->middleware('auth:masyarakat')->group(function () {
+    Route::get('/logout', [MasyarakatController::class,'logout'])->name('mas_logout');
+    Route::get('/profil', [MasyarakatController::class,'profil'])->name('mas_profil');
+});
+Route::prefix('/pengguna')->middleware('guest:masyarakat')->group(function () {
+    Route::get('/login', [MasyarakatController::class,'login'])->name('mas_login');
+Route::get('/register', [MasyarakatController::class,'register'])->name('mas_register');
+Route::post('/register', [MasyarakatController::class,'store'])->name('prosesregister');
+Route::post('/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin');
+});
+
+
 
 
 // lurah
@@ -152,17 +160,11 @@ Route::prefix('statistik')->group(function () {
     Route::get('/kelompok-umur',[StatistikController::class,'kelompok_umur'])->name('kelompok_umur');
     
 });
-
-
-// Kelembagaan Routes
-Route::get('/pkk', function () {
-    return view('pages.kelembagaan.pkk');
+// Statistik Routes
+Route::prefix('pelayanan')->group(function () {
+    Route::get('/surat-pengantar-keterangan-catatan-kepolisian',[PengantarSKCKController::class,'front'])->name('skck.front');
+    Route::post('/surat-pengantar-keterangan-catatan-kepolisian',[PengantarSKCKController::class,'store'])->name('skck.store')->middleware('auth:masyarakat');
 });
-
-Route::get('/lpm', function () {
-    return view('pages.kelembagaan.lpm');
-});
-
 
 
 

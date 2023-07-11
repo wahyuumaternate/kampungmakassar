@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Model;
 
 class Masyarakat extends Model
@@ -13,8 +14,14 @@ class Masyarakat extends Model
 
     protected $fillable = [
         'nama',
+        'no_hp',
         'nik',
         'email',
         'password',
     ];
+
+    public function pengantarSKCK(): HasMany
+    {
+        return $this->hasMany(PengantarSKCK::class);
+    }
 }

@@ -17,6 +17,10 @@
                     @error('nik')
                         <span class="pesan-error">{{ $message }}</span>
                     @enderror
+                    <input type="number" placeholder="Nomor HP/WA" name="no_hp"  value="{{ old('no_hp') }}"/>
+                    @error('no_hp')
+                        <span class="pesan-error">{{ $message }}</span>
+                    @enderror
                     <input type="email" placeholder="EMAIL" name="email"  value="{{ old('email') }}"/>
                     @error('email')
                         <span class="pesan-error">{{ $message }}</span>

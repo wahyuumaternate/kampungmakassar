@@ -14,6 +14,9 @@ class MasyarakatController extends Controller
     public function login() {
         return view('login_mas.login');
     }
+    public function profil() {
+        return view('pages.profil_pengguna.index');
+    }
 
     public function prosesLogin(Request $request) : RedirectResponse {
         $credentials = $request->validate([
@@ -53,6 +56,7 @@ class MasyarakatController extends Controller
     {
         $rules = $request->validate([
             'nama' => ['required'],
+            'no_hp' => ['required'],
             'email' => ['required', 'email:rfc,dns','unique:masyarakats'],
             'nik' => ['required','unique:masyarakats','digits:16','numeric'],
             'password' => ['required','min:8','confirmed'],
