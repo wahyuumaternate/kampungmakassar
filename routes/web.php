@@ -38,11 +38,11 @@ Route::prefix('/pengguna')->middleware('auth:masyarakat')->group(function () {
     Route::get('/logout', [MasyarakatController::class,'logout'])->name('mas_logout');
     Route::get('/profil', [MasyarakatController::class,'profil'])->name('mas_profil');
 });
-Route::prefix('/pengguna')->middleware('guest:masyarakat')->group(function () {
-    Route::get('/login', [MasyarakatController::class,'login'])->name('mas_login');
-Route::get('/register', [MasyarakatController::class,'register'])->name('mas_register');
-Route::post('/register', [MasyarakatController::class,'store'])->name('prosesregister');
-Route::post('/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin');
+Route::prefix('/pengguna')->middleware('guest:masyarakat,web')->group(function () {
+    Route::get('/login', [MasyarakatController::class,'login'])->name('login');
+    Route::get('/register', [MasyarakatController::class,'register'])->name('mas_register');
+    Route::post('/register', [MasyarakatController::class,'store'])->name('prosesregister');
+    Route::post('/login', [MasyarakatController::class,'proseslogin'])->name('proseslogin');
 });
 
 

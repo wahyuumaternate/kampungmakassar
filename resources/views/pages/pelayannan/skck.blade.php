@@ -38,7 +38,8 @@
                     <h3>Mekanisme Dan Prosedur Sistem</h3>
                     <ul>
                         <li>Petugas menerima dan memeriksa kelengkapan berkas permohonan. Jika lengkap, diteruskan
-                            untuk proses lebih lanjut. Jika tidak, dikembalikan ke pemohon untuk dilengkapi melalui email/wa.
+                            untuk proses lebih lanjut. Jika tidak, dikembalikan ke pemohon untuk dilengkapi melalui
+                            email/wa.
                         </li>
                         <li> Kasi yang membidangi melakukan verifikasi data. Jika dinilai tidak cukup, dikembalikan ke
                             pemohon. Jika cukup, dilakukan pemrosesan Surat dan
@@ -56,6 +57,9 @@
                 </div>
                 <form action="{{ route('skck.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @auth('masyarakat')
+                        <input type="hidden" value="  {{ Auth::guard('masyarakat')->user()->id }}" name="masyarakat_id" >
+                    @endauth
                     <div class="mb-3">
                         <label for="fc_kk" class="form-label">Foto Copy Kartu Kelurahan (KK)</label>
                         <input id="fc_kk" class="form-control @error('fc_kk') is-invalid @enderror" type="file"

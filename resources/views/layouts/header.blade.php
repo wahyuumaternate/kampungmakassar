@@ -52,7 +52,6 @@
                         <li><a href="{{ url('surat-keterangan-kelahiran') }}">Surat Keterangan Kelahiran</a></li>
                         <li><a href="{{ url('surat-pengantar-pembuatan-ktp') }}">Surat Pengantar Pembuatan KTP</a></li>
                         <li><a href="{{ url('surat-pengantar-pembuatan-kk') }}">Surat Pengantar Pembuatan KK</a></li>
-                        <li><a href="{{ url('surat-pengantar-pembuatan-kk') }}">Surat Keterengan Usaha (SKU)</a></li>
                         <li><a href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}">Surat Rekomendasi Izin
                                 Kegiatan / Keramaian</a></li>
                         <li><a href="{{ route('skck.front') }}">Surat Pengantar Keterangan Catatan
@@ -65,31 +64,35 @@
                         href="{{ route('pengaduan') }}">Pengaduan</a></li>
                 <li><a class="{{ Request::is('peta') ? 'active' : '' }}" href="{{ route('peta') }}">Peta
                         Kelurahan</a></li>
-                @auth('masyarakat')
-                    <li class="dropdown"><a class="{{ Request::is('pelayanan*') ? 'active' : '' }}"
-                            href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                              </svg></span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{ route('mas_profil') }}">Profil</a></li>
-                            <li><a href="{{ route('mas_logout') }}">Logout</a></li>
+                    @auth('masyarakat')
+                        <li class="dropdown"><a class="{{ Request::is('pelayanan*') ? 'active' : '' }}"
+                                href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}"><span><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg></span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="{{ route('mas_profil') }}">Profil</a></li>
+                                <li><a href="{{ route('mas_logout') }}">Logout</a></li>
 
-                        </ul>
-                    </li>
-                @endauth
-
+                            </ul>
+                        </li>
+                    @endauth
                 @guest('masyarakat')
-                    <li><a class="" href="{{ route('mas_login') }}"><span class="btn text-light"
-                                style="background-color:#1B6B93;">Login <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
-                                    viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-                                    <path fill-rule="evenodd"
-                                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                                </svg></span> </a></li>
+                    @guest('web')
+                        <li><a class="" href="{{ route('login') }}"><span class="btn text-light"
+                                    style="background-color:#1B6B93;">Login <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                        <path fill-rule="evenodd"
+                                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg></span> </a></li>
+                    @endguest
+
                 @endguest
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

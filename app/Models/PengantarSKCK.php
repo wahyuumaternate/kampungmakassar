@@ -17,6 +17,7 @@ class PengantarSKCK extends Model
         'fc_kk',
         'fc_ktp',
         'pengantar_rt_rw',
+        'masyarakat_id',
     ];
 
     public function masyarakat(): BelongsTo

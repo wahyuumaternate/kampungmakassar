@@ -34,15 +34,15 @@
                         <fieldset disabled>
                           <div class="mb-3">
                             <label for="disabledTextInput" class="form-label">Nama</label>
-                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::user()->nama }}">
+                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::guard('masyarakat')->user()->nama }}">
                           </div>
                           <div class="mb-3">
                             <label for="disabledTextInput" class="form-label">Email</label>
-                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::user()->email }}">
+                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::guard('masyarakat')->user()->email }}">
                           </div>
                           <div class="mb-3">
                             <label for="disabledTextInput" class="form-label">Nomor Hp/Wa</label>
-                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::user()->no_hp }}">
+                            <input type="text" id="disabledTextInput" class="form-control" value="{{ Auth::guard('masyarakat')->user()->no_hp }}">
                           </div>
                         </fieldset>
                       </form>

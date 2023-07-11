@@ -13,11 +13,12 @@ class PengantarSKCKController extends Controller
 
     public function store(Request $request) {
 
-        // dd($request);
+        // dd($request->all());
         $rules = $request->validate([
             'fc_kk'=> 'required|mimes:doc,docx,pdf|max:2048',
             'fc_ktp' => 'required|mimes:doc,docx,pdf|max:2048',
             'pengantar_rt_rw' => 'required|mimes:doc,docx,pdf|max:2048',
+            'masyarakat_id' => 'required',
         ]);
         
         $rules['fc_kk'] = $request->file('fc_kk')->store('pelyananFile');

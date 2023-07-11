@@ -36,7 +36,7 @@
                     <button class="opacity">SUBMIT</button>
                 </form>
                 <div class="register-forget opacity">
-                    <a href="{{ route('mas_login') }}">LOGIN</a>
+                    <a href="{{ route('login') }}">LOGIN</a>
                     <a href="/">BACK</a>
                 </div>
             </div>

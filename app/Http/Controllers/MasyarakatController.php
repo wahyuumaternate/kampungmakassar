@@ -29,6 +29,12 @@ class MasyarakatController extends Controller
             $request->session()->regenerate();
             return redirect('/');
         }
+
+        if (Auth::guard('web')->attempt($credentials)) {
+
+            $request->session()->regenerate();
+            return redirect()->route('dashboard');
+        }
         
 
         return back()->withErrors([
