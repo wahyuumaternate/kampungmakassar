@@ -15,6 +15,7 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\infoKelurahanController;
+use App\Http\Controllers\JenisPelayananController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PengantarSKCKController;
@@ -90,6 +91,12 @@ Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group
     Route::get('/data-penduduk/{datapenduduk:nik}/edit', [DatapendudukController::class,'edit'])->name('datapenduduk.edit');
     Route::put('/data-penduduk/{datapenduduk:id}/edit', [DatapendudukController::class,'update'])->name('datapenduduk.update');
     Route::delete('/data-penduduk/{datapenduduk}', [DatapendudukController::class,'destroy'])->name('datapenduduk.delete');
+    // pelayanan
+    Route::get('/pelayanan', [PelayananController::class,'index'])->name('pelayanan.index');
+    Route::get('/jenis-pelayanan', [JenisPelayananController::class,'index'])->name('jenis_pelayanan.index');
+    Route::post('/jenis-pelayanan', [JenisPelayananController::class,'store'])->name('jenis_pelayanan.store');
+    Route::delete('/jenis-pelayanan/{jenis_pelayanan}', [JenisPelayananController::class,'destroy'])->name('pelayanan.delete');
+    Route::delete('/pelayanan/{pelayanan}', [PelayananController::class,'destroy'])->name('pelayanan.delete');
    
 });
 

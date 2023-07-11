@@ -20,7 +20,7 @@ class Masyarakat extends Model
         'password',
     ];
 
-    public function pengantarSKCK(): HasMany
+    public function pelayanan(): HasMany
     {
         return $this->hasMany(Pelayanan::class);
     }

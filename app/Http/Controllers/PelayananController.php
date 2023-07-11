@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JenisPelayanan;
 use App\Models\Pelayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PelayananController extends Controller
 {
@@ -36,6 +37,31 @@ class PelayananController extends Controller
 
         Pelayanan::create($rules);
         return redirect()->route('pelayanan')->with('success','Berhasil Di Kirim');
+    }
+
+    public function index() {
+        return view('admin.pelayanan.index',[
+            'pelayanan' => Pelayanan::with(['masyarakat','jenisPelayanan'])->get()
+        ]);
+    }
+
+    public function destroy(Pelayanan $pelayanan)
+    {
+        if ($pelayanan->fc_kk) {
+            Storage::delete($pelayanan->fc_kk);
+        }
+        if ($pelayanan->fc_ktp) {
+            Storage::delete($pelayanan->fc_ktp);
+        }
+        if ($pelayanan->surat_pernyataan) {
+            Storage::delete($pelayanan->surat_pernyataan);
+        }
+        if ($pelayanan->pengantar_rt_rw) {
+            Storage::delete($pelayanan->pengantar_rt_rw);
+        }
+        
+        Pelayanan::destroy($pelayanan->id);
+        return redirect()->route('pelayanan.index')->with('success','Berita Berhasil Di Hapus');
     }
 
 }

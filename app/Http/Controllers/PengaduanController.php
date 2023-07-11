@@ -62,6 +62,10 @@ class PengaduanController extends Controller
 
     public function destroy(Pengaduan $pengaduan)
     {
+        if ($pengaduan->lampiran) {
+            Storage::delete($pengaduan->lampiran);
+        }
+        
         Pengaduan::destroy($pengaduan->id);
         return redirect()->route('pengaduan.index')->with('success','Berhasil Di Hapus');
     }

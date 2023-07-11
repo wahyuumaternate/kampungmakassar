@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Peta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PetaController extends Controller
 {
@@ -39,6 +40,10 @@ class PetaController extends Controller
     
     public function destroy(Peta $peta)
     {
+        if ($peta->gambar) {
+            Storage::delete($peta->gambar);
+        }
+
         Peta::destroy($peta->id);
         return redirect()->route('peta.index')->with('success','Berhasil Di Hapus');
     }

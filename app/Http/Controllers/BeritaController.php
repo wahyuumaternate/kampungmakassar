@@ -76,6 +76,7 @@ class BeritaController extends Controller
         if ($berita->gambar) {
             Storage::delete($berita->gambar);
         }
+        
         Berita::destroy($berita->id);
         return redirect()->route('berita.index')->with('success','Berita Berhasil Di Hapus');
     }
