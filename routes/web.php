@@ -16,6 +16,7 @@ use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\infoKelurahanController;
 use App\Http\Controllers\MasyarakatController;
+use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PengantarSKCKController;
 use App\Http\Controllers\PetaController;
 use Illuminate\Support\Facades\Route;
@@ -162,8 +163,8 @@ Route::prefix('statistik')->group(function () {
 });
 // Statistik Routes
 Route::prefix('pelayanan')->group(function () {
-    Route::get('/surat-pengantar-keterangan-catatan-kepolisian',[PengantarSKCKController::class,'front'])->name('skck.front');
-    Route::post('/surat-pengantar-keterangan-catatan-kepolisian',[PengantarSKCKController::class,'store'])->name('skck.store')->middleware('auth:masyarakat');
+    Route::get('/',[PelayananController::class,'front'])->name('pelayanan');
+    Route::post('/',[PelayananController::class,'store'])->name('pelayanan.store')->middleware('auth:masyarakat');
 });
 
 

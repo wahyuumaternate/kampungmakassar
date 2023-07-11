@@ -25,15 +25,6 @@
                         <li><a href="{{ route('struktur.organisasi') }}">Struktur Organisasi</a></li>
                     </ul>
                 </li>
-                {{-- <li class="dropdown"><a
-                        class="{{ Request::is('pkk') ? 'active' : '' }}
-                        {{ Request::is('lpm') ? 'active' : '' }}"
-                        href="{{ url('pkk') }}"><span>Kelembagaan</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="{{ url('pkk') }}">PKK</a></li>
-                        <li><a href="{{ url('lpm') }}">LPM</a></li>
-                    </ul>
-                </li> --}}
                 <li class="dropdown"><a class="{{ Request::is('statistik*') ? 'active' : '' }}"
                         href="{{ url('jenis-kelamin') }}"><span>Statistik Kelurahan</span> <i
                             class="bi bi-chevron-down"></i></a>
@@ -45,19 +36,7 @@
                         <li><a href="{{ route('kelompok_umur') }}">Kelompok Umur</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a class="{{ Request::is('pelayanan*') ? 'active' : '' }}"
-                        href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}"><span>Pelayanan</span> <i
-                            class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="{{ url('surat-keterangan-kelahiran') }}">Surat Keterangan Kelahiran</a></li>
-                        <li><a href="{{ url('surat-pengantar-pembuatan-ktp') }}">Surat Pengantar Pembuatan KTP</a></li>
-                        <li><a href="{{ url('surat-pengantar-pembuatan-kk') }}">Surat Pengantar Pembuatan KK</a></li>
-                        <li><a href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}">Surat Rekomendasi Izin
-                                Kegiatan / Keramaian</a></li>
-                        <li><a href="{{ route('skck.front') }}">Surat Pengantar Keterangan Catatan
-                                Kepolisian</a></li>
-                    </ul>
-                </li>
+                <li><a class="{{ Request::is('pelayanan') ? 'active' : '' }}" href="{{ route('pelayanan') }}">Pelayanan</a></li>
                 <li><a class="{{ Request::is('berita') ? 'active' : '' }}" href="{{ route('berita') }}">Berita</a>
                 </li>
                 <li><a class="{{ Request::is('pengaduan') ? 'active' : '' }}"

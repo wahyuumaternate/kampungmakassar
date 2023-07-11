@@ -136,12 +136,10 @@
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="pelayanan">
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
-                                    Keterangan</span></a>
+                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Pelayanan Masuk</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Surat
-                                    Kematian</span></a>
+                            <a class="nav-link pl-3" href="#!"><span class="ml-1 item-text">Jenis Pelayanan</span></a>
                         </li>
                     </ul>
                 </li>

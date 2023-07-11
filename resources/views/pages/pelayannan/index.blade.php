@@ -12,7 +12,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <ol>
                 <li><a href="/">Beranda</a></li>
-                <li>Pelayanan SKCK</li>
+                <li>Pelayanan</li>
             </ol>
         </div>
 
@@ -28,40 +28,32 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <small>Jika Berkas Sudah Siap Kami Akan Menghubungi Anda Pada Email</small> <br>
+                <small>Jika Berkas Sudah Siap Kami Akan Menghubungi Anda Melalui Email Atau WA</small> <br>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
         <div class="card shadow">
             <div class="card-body">
                 <div class="card-title mb-3">
-                    <h3>Mekanisme Dan Prosedur Sistem</h3>
-                    <ul>
-                        <li>Petugas menerima dan memeriksa kelengkapan berkas permohonan. Jika lengkap, diteruskan
-                            untuk proses lebih lanjut. Jika tidak, dikembalikan ke pemohon untuk dilengkapi melalui
-                            email/wa.
-                        </li>
-                        <li> Kasi yang membidangi melakukan verifikasi data. Jika dinilai tidak cukup, dikembalikan ke
-                            pemohon. Jika cukup, dilakukan pemrosesan Surat dan
-                            diparaf serta diteruskan ke Lurah.
-                        </li>
-                        <li>Lurah menandatangani Surat dan menyerahkan kepada Kasi.
-                        </li>
-                        <li> Petugas membubuhkan cap stempel dan menyerahkan Surat kepada
-                            Pemohon.</li>
+                    <h3>Alur Pelayanan</h3>
+                    <ol>
                         <li>
-                            Kasi merigestrasikan Surat dan menyerahkannya kepada petugas.
+                            Scan PDF Pengantar RT,
+                            Scan PDF Fotocopy KTP & KK pemohon,
+                            Scan PDF Surat Pernyataan tanda tangan bermaterai,
                         </li>
-                    </ul>
+                        <li> Jika Surat Keterangan telah selesai dibuat, maka akan dihubungi oleh petugas.
+
+                    </ol>
                     <small class="text-muted">Maksimal Ukuran File 2mb. format dokument : pdf, docs</small>
                 </div>
-                <form action="{{ route('skck.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pelayanan.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @auth('masyarakat')
-                        <input type="hidden" value="  {{ Auth::guard('masyarakat')->user()->id }}" name="masyarakat_id" >
+                        <input type="hidden" value="  {{ Auth::guard('masyarakat')->user()->id }}" name="masyarakat_id">
                     @endauth
                     <div class="mb-3">
-                        <label for="fc_kk" class="form-label">Foto Copy Kartu Kelurahan (KK)</label>
+                        <label for="fc_kk" class="form-label">Foto Copy Kartu Keluarga (KK)</label>
                         <input id="fc_kk" class="form-control @error('fc_kk') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="fc_kk">
 
@@ -80,6 +72,28 @@
                             <span class="invalid-feedback" role="alert">
                                 <small class="text-danger">{{ $message }}</small>
                             </span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="surat_pernyataan" class="form-label">Surat Pernyataan</label>
+                        <input id="surat_pernyataan" class="form-control @error('surat_pernyataan') is-invalid @enderror" type="file"
+                            id="formFileMultiple" name="surat_pernyataan">
+                        @error('surat_pernyataan')
+                            <span class="invalid-feedback" role="alert">
+                                <small class="text-danger">{{ $message }}</small>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="jenis_pelayanan_id" class="form-label">Jenis Pelayanan</label>
+                        <select class="form-select @error('jenis_pelayanan_id') is-invalid @enderror"
+                            aria-label="Default select example" name="jenis_pelayanan_id">
+                            @foreach ($jenis_pelayanan as $pelayanan)
+                                <option selected value="{{ $pelayanan->id }}">{{ $pelayanan->nama_pelayanan }}</option>
+                            @endforeach
+                        </select>
+                        @error('jenis_pelayanan_id')
+                            <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="mb-3">

@@ -22,6 +22,6 @@ class Masyarakat extends Model
 
     public function pengantarSKCK(): HasMany
     {
-        return $this->hasMany(PengantarSKCK::class);
+        return $this->hasMany(Pelayanan::class);
     }
 }

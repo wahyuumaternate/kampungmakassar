@@ -71,7 +71,7 @@ class MasyarakatController extends Controller
         $rules['password'] = Hash::make( $rules['password']);
 
         Masyarakat::create($rules);
-        return redirect('/masyarakat/login')->with('success','berhasil membuat akun, silahkan masuk');
+        return redirect()->route('login')->with('success','berhasil membuat akun, silahkan masuk');
     }
     
 }
