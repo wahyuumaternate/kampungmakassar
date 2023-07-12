@@ -1,4 +1,4 @@
-@extends('layouts.main',['title' => 'Statistik Berdasarkan Kelompok Umur'])
+@extends('layouts.main', ['title' => 'Statistik Berdasarkan Kelompok Umur'])
 
 @section('body')
 @section('outmain')
@@ -19,19 +19,24 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
-                                     <span class="me-3">  <i class="bi bi-pie-chart-fill"></i> </span> Statistik Penduduk
+                                    <span class="me-3"> <i class="bi bi-pie-chart-fill"></i> </span> Statistik
+                                    Penduduk
                                 </button>
                             </h3>
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                                 <div class="accordion-body">
                                     <div class="list-group">
-                                        <a href="{{ route('jenis_kelamin') }}" class="list-group-item list-group-item-action ">Jenis
+                                        <a href="{{ route('jenis_kelamin') }}"
+                                            class="list-group-item list-group-item-action ">Jenis
                                             Kelamin</a>
-                                        <a href="{{ route('agama') }}" class="list-group-item list-group-item-action ">Agama</a>
-                                        <a href="{{ route('pekerjaan') }}" class="list-group-item list-group-item-action ">Pekerjaan</a>
+                                        <a href="{{ route('agama') }}"
+                                            class="list-group-item list-group-item-action ">Agama</a>
+                                        <a href="{{ route('pekerjaan') }}"
+                                            class="list-group-item list-group-item-action ">Pekerjaan</a>
                                         <a href="{{ route('pendidikan') }}"
                                             class="list-group-item list-group-item-action ">Pendidikan</a>
-                                        <a href="{{ route('kelompok_umur') }}" class="list-group-item list-group-item-action active">Kelompok
+                                        <a href="{{ route('kelompok_umur') }}"
+                                            class="list-group-item list-group-item-action active">Kelompok
                                             Umur</a>
                                     </div>
                                 </div>
@@ -47,7 +52,7 @@
                             </h3>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                                 <div class="accordion-body">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -56,12 +61,12 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                     aria-controls="panelsStayOpen-collapseThree">
-                                    <span class="me-3">  <i class="bi bi-bar-chart-line"></i> </span> Statistik Lainnya
+                                    <span class="me-3"> <i class="bi bi-bar-chart-line"></i> </span> Statistik Lainnya
                                 </button>
                             </h3>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                                 <div class="accordion-body">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -77,7 +82,6 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">No</th>
                                         <th scope="col">Kelompok</th>
                                         <th scope="col">Jumlah</th>
                                         <th scope="col">Laki-Laki</th>
@@ -85,87 +89,106 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>0 S/D 5 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',0)->where('usia', '<=',5)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',0)->where('usia', '<=',5)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',0)->where('usia', '<=',5)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>5 S/D 11 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',5)->where('usia', '<=',11)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',5)->where('usia', '<=',11)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',5)->where('usia', '<=',11)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>12 S/D 16 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',12)->where('usia', '<=',16)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',12)->where('usia', '<=',16)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',12)->where('usia', '<=',16)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>17 S/D 25 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',17)->where('usia', '<=',25)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',17)->where('usia', '<=',25)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',17)->where('usia', '<=',25)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>26 S/D 35 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',26)->where('usia', '<=',35)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',26)->where('usia', '<=',35)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',26)->where('usia', '<=',35)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">6</th>
-                                        <td>36 S/D 45 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',36)->where('usia', '<=',45)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',36)->where('usia', '<=',45)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',36)->where('usia', '<=',45)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">7</th>
-                                        <td>46 S/D 55 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',46)->where('usia', '<=',55)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',46)->where('usia', '<=',55)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',46)->where('usia', '<=',55)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">8</th>
-                                        <td>56 S/D 65 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">9</th>
-                                        <td>> 65 Tahun</td>
-                                        <td> {{ $penduduk->where('usia', '>=',65)->count() }}</td>
-                                        <td> {{ $penduduk->where('usia', '>=',65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
-                                        </td>
-                                        <td> {{ $penduduk->where('usia', '>=',65)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
-                                        </td>
-                                    </tr>
+                                    @if ($penduduk->count())
+                                        @if ($penduduk->where('usia', '>=', 0)->where('usia', '<=', 5)->count())
+                                            <tr>
+                                                <td>0 S/D 5 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 0)->where('usia', '<=', 5)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 0)->where('usia', '<=', 5)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 0)->where('usia', '<=', 5)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 5)->where('usia', '<=', 11)->count())
+                                            <tr>
+                                                <td>5 S/D 11 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 5)->where('usia', '<=', 11)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 5)->where('usia', '<=', 11)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 5)->where('usia', '<=', 11)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 12)->where('usia', '<=', 16)->count())
+                                            <tr>
+                                                <td>12 S/D 16 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 12)->where('usia', '<=', 16)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 12)->where('usia', '<=', 16)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 12)->where('usia', '<=', 16)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 17)->where('usia', '<=', 25)->count())
+                                            <tr>
+                                                <td>17 S/D 25 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 17)->where('usia', '<=', 25)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 17)->where('usia', '<=', 25)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 17)->where('usia', '<=', 25)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 26)->where('usia', '<=', 35)->count())
+                                            <tr>
+                                                <td>26 S/D 35 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 26)->where('usia', '<=', 35)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 26)->where('usia', '<=', 35)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 26)->where('usia', '<=', 35)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 36)->where('usia', '<=', 45)->count())
+                                            <tr>
+                                                <td>36 S/D 45 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 36)->where('usia', '<=', 45)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 36)->where('usia', '<=', 45)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 36)->where('usia', '<=', 45)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 46)->where('usia', '<=', 55)->count())
+                                            <tr>
+                                                <td>46 S/D 55 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 46)->where('usia', '<=', 55)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 46)->where('usia', '<=', 55)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 46)->where('usia', '<=', 55)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 56)->where('usia', '<=', 65)->count())
+                                            <tr>
+                                                <td>56 S/D 65 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 56)->where('usia', '<=', 65)->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 56)->where('usia', '<=', 65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 56)->where('usia', '<=', 65)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        @if ($penduduk->where('usia', '>=', 65)->count())
+                                            <tr>
+                                                <td>> 65 Tahun</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 65)->count() }}</td>
+                                                <td> {{ $penduduk->where('usia', '>=', 65)->where('jenis_kelamin', 'LAKI-LAKI')->count() }}
+                                                </td>
+                                                <td> {{ $penduduk->where('usia', '>=', 65)->where('jenis_kelamin', 'PEREMPUAN')->count() }}
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endif
 
                                 </tbody>
                             </table>
@@ -215,40 +238,40 @@
                     type: 'pie',
                     radius: '50%',
                     data: [{
-                            value: {{ $penduduk->where('usia', '>=',0)->where('usia', '<=',5)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 0)->where('usia', '<=', 5)->count() }},
                             name: '0 S/D 5 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',5)->where('usia', '<=',11)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 5)->where('usia', '<=', 11)->count() }},
                             name: '5 S/D 11 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',12)->where('usia', '<=',16)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 12)->where('usia', '<=', 16)->count() }},
                             name: '12 S/D 16 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',17)->where('usia', '<=',25)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 17)->where('usia', '<=', 25)->count() }},
                             name: '17 S/D 25 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',26)->where('usia', '<=',35)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 26)->where('usia', '<=', 35)->count() }},
                             name: '26 S/D 35 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',36)->where('usia', '<=',45)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 36)->where('usia', '<=', 45)->count() }},
                             name: '36 S/D 45 Tahun'
                         },
-                        
+
                         {
-                            value: {{ $penduduk->where('usia', '>=',46)->where('usia', '<=',55)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 46)->where('usia', '<=', 55)->count() }},
                             name: '46 S/D 55 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',56)->where('usia', '<=',65)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 56)->where('usia', '<=', 65)->count() }},
                             name: '56 S/D 65 Tahun'
                         },
                         {
-                            value: {{ $penduduk->where('usia', '>=',65)->count() }},
+                            value: {{ $penduduk->where('usia', '>=', 65)->count() }},
                             name: '> 65 Tahun'
                         },
                     ],

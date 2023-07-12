@@ -125,7 +125,7 @@
                                                     <div class="modal-body">
                                                         <div class="form-group">
                                                             <label for="simple-select2">Nama Rw</label>
-                                                            <input type="text" id="simpleinput"
+                                                            <input type="number" id="simpleinput"
                                                                 class="form-control  @error('nama_rw') is-invalid @enderror"
                                                                 value="{{ old('nama_rw') }}"
                                                                 placeholder="Nama Rw" name="nama_rw" required>
