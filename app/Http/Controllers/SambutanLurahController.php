@@ -21,7 +21,7 @@ class SambutanLurahController extends Controller
         $rules = $request->validate([
             'nama_lurah'=>['required'],
             'sambutan_lurah' => 'required',
-            'gambar_lurah' => 'required|image|mimes:jpeg,png,jpg|max:2048|unique:sambutan_lurah',
+            'gambar_lurah' => 'image|mimes:jpeg,png,jpg|max:2048|unique:sambutan_lurah',
         ]);
 
         if ($request->file('gambar_lurah')) {
