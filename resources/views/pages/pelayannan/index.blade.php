@@ -53,7 +53,7 @@
                         <input type="hidden" value="  {{ Auth::guard('masyarakat')->user()->id }}" name="masyarakat_id">
                     @endauth
                     <div class="mb-3">
-                        <label for="fc_kk" class="form-label">Foto Copy Kartu Keluarga (KK)</label>
+                        <label for="fc_kk" class="form-label">Foto Copy Kartu Keluarga (KK) <span class="text-danger">*</span></label>
                         <input id="fc_kk" class="form-control @error('fc_kk') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="fc_kk">
 
@@ -64,7 +64,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="fc_ktp" class="form-label">Foto Copy Kartu Tanda Penduduk (KTP)</label>
+                        <label for="fc_ktp" class="form-label">Foto Copy Kartu Tanda Penduduk (KTP) <span class="text-danger">*</span></label>
                         <input id="fc_ktp" class="form-control @error('fc_ktp') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="fc_ktp">
 
@@ -75,7 +75,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="surat_pernyataan" class="form-label">Surat Pernyataan</label>
+                        <label for="surat_pernyataan" class="form-label">Surat Pernyataan </label>
                         <input id="surat_pernyataan" class="form-control @error('surat_pernyataan') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="surat_pernyataan">
                         @error('surat_pernyataan')
@@ -85,7 +85,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="jenis_pelayanan_id" class="form-label">Jenis Pelayanan</label>
+                        <label for="jenis_pelayanan_id" class="form-label">Jenis Pelayanan <span class="text-danger">*</span></label>
                         <select class="form-select @error('jenis_pelayanan_id') is-invalid @enderror"
                             aria-label="Default select example" name="jenis_pelayanan_id">
                             @foreach ($jenis_pelayanan as $pelayanan)
@@ -98,7 +98,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="pengantar_rt_rw" class="form-label">Surat Pengantar dari Ketua RT/RW
-                            setempat</label>
+                            setempat <span class="text-danger">*</span></label>
                         <input id="pengantar_rt_rw" class="form-control @error('pengantar_rt_rw') is-invalid @enderror"
                             type="file" id="formFileMultiple" name="pengantar_rt_rw">
 

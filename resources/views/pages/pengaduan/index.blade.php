@@ -39,7 +39,7 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                        <label for="exampleFormControlInput1" class="form-label">Nama <span class="text-danger">*</span></label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="Nama Lengkap" name="nama"
                             value="{{ old('nama') }}" autofocus>
@@ -50,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nomor Induk Kependudukan</label>
+                        <label for="exampleFormControlInput1" class="form-label">Nomor Induk Kependudukan <span class="text-danger">*</span></label>
                         <input type="number" class="form-control @error('nik') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="NIK" name="nik" value="{{ old('nik') }}">
                         @error('nik')
@@ -60,7 +60,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <label for="exampleFormControlInput1" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                             id="exampleFormControlInput1" placeholder="Email" name="email"
                             value="{{ old('email') }}">
@@ -71,7 +71,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Jenis Pengaduan</label>
+                        <label for="exampleFormControlInput1" class="form-label">Jenis Pengaduan <span class="text-danger">*</span></label>
                         <select class="form-select @error('jenis_pengaduan') is-invalid @enderror"
                             aria-label="Default select example" name="jenis_pengaduan">
                             <option selected value="">-- Pilih Jenis Pengaduan --</option>
@@ -85,7 +85,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Pengaduan</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Pengaduan <span class="text-danger">*</span></label>
                         <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="exampleFormControlTextarea1" rows="3"
                             name="deskripsi"></textarea>
                         @error('deskripsi')
@@ -95,7 +95,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="lampiran" class="form-label">Lampiran</label>
+                        <label for="lampiran" class="form-label">Lampiran <span class="text-danger">*</span></label>
                         <input id="lampiran" class="form-control @error('lampiran') is-invalid @enderror" type="file"
                             id="formFileMultiple" name="lampiran">
                         <small class="text-muted">Max size 2mb. format : pdf, docs, png, jpg, jpeg</small>

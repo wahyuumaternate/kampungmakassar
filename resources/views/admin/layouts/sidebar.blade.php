@@ -157,12 +157,22 @@
             <span>Users</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item w-100">
-                <a class="nav-link" href="{{ route('dashboard') }}">
+            <li class="nav-item active dropdown">
+                <a href="#user" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-user fe-16"></i>
-                    <span class="ml-3 item-text">User</span>
+                    <span class="ml-3 item-text">Users</span>
                 </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="user">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{ route('pelayanan.index') }}"><span class="ml-1 item-text">Profil User</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{ route('jenis_pelayanan.index') }}"><span class="ml-1 item-text">Tambah User</span></a>
+                    </li>
+                </ul>
             </li>
+        </ul>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

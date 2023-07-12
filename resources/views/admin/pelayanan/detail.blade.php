@@ -1,4 +1,4 @@
-@extends('admin.layouts.main', ['title' => 'Pelayanan'])
+@extends('admin.layouts.main', ['title' => 'Detail Pelayanan'])
 @section('headerside')
     @include('admin.layouts.header')
     @include('admin.layouts.sidebar')
@@ -22,9 +22,13 @@
             </div>
             <div class="row mb-4">
               <div class="col-md-7">
-                  <p class="small mb-0">{{ $pelayanan->masyarakat->nik }}</p>
-                <p class="small mb-0">{{ $pelayanan->masyarakat->email }}</p>
-                <p class="small mb-0">{{ $pelayanan->masyarakat->no_hp }}</p>
+                  <p class="small mb-1 bg-secondary btn text-light">Nik : {{ $pelayanan->masyarakat->nik }}</p>
+                <p class="small mb-1 bg-secondary btn text-light">Email : {{ $pelayanan->masyarakat->email }}</p>
+                <p class="small mb-1 bg-secondary btn text-light">No Hp : {{ $pelayanan->masyarakat->no_hp }}</p>
+              </div>
+              <div class="col-md-5">
+                <a class="text-light btn btn-primary m-1" href="mailto:{{ $pelayanan->masyarakat->email }}"><i class="fe fe-mail fe-16"></i> Kirim Email</a>
+                <a class="text-light btn btn-success m-1" href="https://wa.me/+62{{ $pelayanan->masyarakat->no_hp }}"><i class="fe fe-phone fe-16"></i> Kirim WA</a>
               </div>
             </div>
           </div>
