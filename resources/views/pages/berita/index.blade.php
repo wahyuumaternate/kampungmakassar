@@ -1,4 +1,4 @@
-@extends('layouts.main',['title' => 'Berita Terkini'])
+@extends('layouts.main', ['title' => 'Berita Terkini'])
 
 @section('body')
 @section('outmain')
@@ -22,7 +22,7 @@
 <!-- ======= posts Section ======= -->
 <section id="blog" class="blog">
     <div class="container" data-aos="fade-up">
-       
+
         <div class="row">
 
 
@@ -66,17 +66,12 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
-            @if ($berita->count() > 8)
-                <div class="blog-pagination">
-                    <ul class="justify-content-center">
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    </ul>
+                <div class="d-flex justify-content-center">
+                    <div class="blog-pagination">
+                        {{ $berita->links() }}
+                    </div>
                 </div>
-            @endif
-
+            </div>
         </div><!-- End blog entries list -->
         <div class="col-lg-1"></div>
 

@@ -7,11 +7,8 @@
           <div class="carousel-item active">
               <div class="carousel-container">
                   <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di Website <span>Kelurahan
-                          Makassar</span></h2>
-                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi
-                      ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea
-                      voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.
-                  </p>
+                          Makassar Barat</span></h2>
+                  <h4 class="animate__animated animate__fadeInUp text-light">Kecamatan Kota Ternate Tengah, Kota Ternate, Provinsi Maluku Utara</h4>
               </div>
           </div>
 
@@ -19,7 +16,6 @@
          <div class="carousel-item">
             <div class="carousel-container">
                 <h2 class="animate__animated animate__fadeInDown">{{ $h->judul }}</h2>
-                <p class="animate__animated animate__fadeInUp">{{ $h->excerp }}</p>
                 <a href="{{ route('detail.berita', $h->slug) }}" class="btn-get-started animate__animated animate__fadeInUp">Selengpanya</a>
             </div>
         </div>

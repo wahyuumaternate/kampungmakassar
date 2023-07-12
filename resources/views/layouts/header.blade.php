@@ -15,7 +15,7 @@
                 <li class="dropdown">
                     <a
                         class="{{ Request::is('profil*') ? 'active' : '' }}
-                        href="{{ url('visi-misi') }}">
+                        href="{{ route('visimisi') }}">
                         <span>Profil</span> <i class="bi bi-chevron-down"></i>
                     </a>
                     <ul>
@@ -45,13 +45,13 @@
                         Kelurahan</a></li>
                     @auth('masyarakat')
                         <li class="dropdown"><a class="{{ Request::is('pelayanan*') ? 'active' : '' }}"
-                                href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}"><span><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                        <path fill-rule="evenodd"
-                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></span> <i class="bi bi-chevron-down"></i></a>
+                                href="{{ url('surat-rekomendasi-izin-kegiatan-keramaian') }}"><span><lord-icon
+                                    src="https://cdn.lordicon.com/hbvyhtse.json"
+                                    trigger="hover"
+                                    colors="primary:#fff"
+                                    state="hover"
+                                    style="width:30px;height:30px">
+                                </lord-icon></span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="{{ route('mas_profil') }}">Profil</a></li>
                                 <li><a href="{{ route('mas_logout') }}">Logout</a></li>

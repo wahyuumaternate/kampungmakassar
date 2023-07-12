@@ -6,60 +6,6 @@
     @include('layouts.hero')
 @endsection
 
-<!-- ======= Pelayanan Section ======= -->
-<section class="services">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-                <div class="icon-box icon-box-blue">
-                    <lord-icon src="https://cdn.lordicon.com/zscdqzcc.json" trigger="hover" colors="primary:#107c91"
-                        style="width:190px;height:190px">
-                    </lord-icon>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
-                        sint occaecati cupiditate non provident</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-box icon-box-blue">
-                    <lord-icon src="https://cdn.lordicon.com/zchxlapl.json" trigger="hover" colors="primary:#107c91"
-                        style="width:190px;height:190px">
-                    </lord-icon>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box icon-box-blue">
-                    <lord-icon src="https://cdn.lordicon.com/nxooksci.json" trigger="hover" colors="primary:#107c91"
-                        style="width:190px;height:190px">
-                    </lord-icon>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box icon-box-blue">
-                    <lord-icon src="https://cdn.lordicon.com/uvqnvwbl.json" trigger="hover" colors="primary:#107c91"
-                        style="width:190px;height:190px">
-                    </lord-icon>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                        praesentium voluptatum deleniti atque</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section><!-- End Pelayanan Section -->
-
 <!-- ======= posts Section ======= -->
 <section id="blog" class="blog">
     <div class="container" data-aos="fade-up">
@@ -154,11 +100,14 @@
                             </div>
                         @endforeach
                     @else
-                    <div class="text-center">
-                        <img src="{{ asset('assets/img/tidakadaberita.svg') }}" width="50%" class="img-fluid" alt="">
-                        <h6 class="text-center mt-5 text-muted"> Berita Tidak Tersedia Silakan kunjungi kembali dalam waktu dekat</h6>
-                        <a class="text-center mt-5 btn text-light" style="background-color:#1B6B93;" href="/"><i class="bi bi-arrow-return-left"></i> Kembali</a>
-                    </div>
+                        <div class="text-center">
+                            <img src="{{ asset('assets/img/tidakadaberita.svg') }}" width="50%" class="img-fluid"
+                                alt="">
+                            <h6 class="text-center mt-5 text-muted"> Berita Tidak Tersedia Silakan kunjungi kembali
+                                dalam waktu dekat</h6>
+                            <a class="text-center mt-5 btn text-light" style="background-color:#1B6B93;"
+                                href="/"><i class="bi bi-arrow-return-left"></i> Kembali</a>
+                        </div>
                     @endif
 
                 </div>
@@ -166,8 +115,8 @@
                     <div class="blog-pagination">
                         <h5 class="text-center"> <a href="" class="text-center btn text-white"
                                 style="background-color:#1B6B93;">Lihat Berita Lainnya</a></h5>
-                        
-                               
+
+
 
                     </div>
                 @endif
@@ -186,20 +135,20 @@
         <div class="row counters">
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_penduduk }}" data-purecounter-duration="1"
-                    class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_penduduk }}"
+                    data-purecounter-duration="1" class="purecounter"></span>
                 <p>Jumlah Penduduk</p>
             </div>
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_perempuan }}" data-purecounter-duration="1"
-                    class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_perempuan }}"
+                    data-purecounter-duration="1" class="purecounter"></span>
                 <p>Jumlah Penduduk Perempuan</p>
             </div>
 
             <div class="col-lg-4 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_laki_laki }}" data-purecounter-duration="1"
-                    class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $jumlah_laki_laki }}"
+                    data-purecounter-duration="1" class="purecounter"></span>
                 <p>Jumlah Penduduk Laki - Laki</p>
             </div>
         </div>
@@ -208,6 +157,6 @@
 </section><!-- End Facts Section -->
 
 {{-- JS --}}
-<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
 @include('layouts.footer')
 @endsection
