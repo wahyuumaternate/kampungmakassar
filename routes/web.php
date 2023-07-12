@@ -48,12 +48,12 @@ Route::prefix('/pengguna')->middleware('guest:masyarakat,web')->group(function (
 });
 
 // lurah
-Route::prefix('administrator/dashboard')->middleware(['auth','is_lurah'])->group(function () {
+Route::prefix('administrator/dashboard')->middleware(['auth:web','is_lurah'])->group(function () {
     Route::put('/aprove/{pengaduan}',[DashboardController::class,'aprove'])->name('aprove');
 });
 
 // admin
-Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group(function () {
+Route::prefix('administrator/dashboard')->middleware(['auth:web','is_admin'])->group(function () {
     Route::get('/data-penduduk/tambah', [DatapendudukController::class,'create'])->name('datapenduduk.tambah');
     Route::get('/kirim-email/{id}', [PengaduanController::class,'kirimEmail'])->name('kirimEmail');
     // visimisi
@@ -71,9 +71,7 @@ Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group
     //struktur organisani
     Route::get('/profil-kelurahan/struktur-organisasi', [StrukturOrganisasiController::class,'index'])->name('organisasi.index');
     Route::post('/profil-kelurahan/tambah-struktur-organisasi/store', [StrukturOrganisasiController::class,'store'])->name('organisasi.store');
-    Route::get('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'edit'])->name('organisasi.edit');
-    Route::put('/profil-kelurahan/{struktur_organisasi:slug}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->name('organisasi.update');
-    Route::delete('/profil-kelurahan/{struktur_organisasi:slug}', [StrukturOrganisasiController::class,'destroy'])->name('organisasi.delete');
+    Route::put('/profil-kelurahan/{struktur_organisasi:id}/edit-struktur-organisasi', [StrukturOrganisasiController::class,'update'])->name('organisasi.update');
     // pekerjaan & pendidikan
     Route::get('kependudukan/pekerjaan', [PekerjaanPendidikanController::class,'pekerjaan'])->name('pekerjaan.index');
     Route::get('kependudukan/pendidikan', [PekerjaanPendidikanController::class,'pendidikan'])->name('pendidikan.index');
@@ -99,7 +97,7 @@ Route::prefix('administrator/dashboard')->middleware(['auth','is_admin'])->group
 });
 
 // dashboard
-Route::prefix('administrator/dashboard')->middleware('auth')->group(function () {
+Route::prefix('administrator/dashboard')->middleware('auth:web')->group(function () {
     
     Route::get('/',[DashboardController::class,'index'])->middleware(['verified'])->name('dashboard');
     // kependudukan

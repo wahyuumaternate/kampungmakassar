@@ -48,9 +48,7 @@ class FrontendController extends Controller
     public function struktur_organisasi() {
             
             return view('pages.profil_kelurahan.struktur_organisasi',[
-                'lurah' => StrukturOrganisasi::where('jabatan','lurah')->get(),
-                'sekretaris' => StrukturOrganisasi::where('jabatan','sekretaris')->get(),
-                'aggota' => StrukturOrganisasi::where('jabatan','staff')->get(),
+                'struktur' => StrukturOrganisasi::all(),
             ]);
     }
 

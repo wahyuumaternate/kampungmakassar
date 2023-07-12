@@ -2320,5 +2320,32 @@ section {
   color: #a2cce3;
 }
 
+
+@media (max-width: 576px) { 
+  .img-footer{
+    display:flex ;
+    justify-content: center;
+    width: 80px;
+  }
+  .div-img-footer{
+    display:flex ;
+    justify-content: center;
+  }
+  
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+  .img-footer{
+    width: 80px;
+    display:flex ;
+    justify-content: center;
+  }
+  .div-img-footer{
+    display:flex ;
+    justify-content: center;
+  }
+}
+
 /* wave */
 

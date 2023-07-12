@@ -51,7 +51,7 @@ class BeritaController extends Controller
         // dd($request->gambar);
         $rules = $request->validate([
             'judul'=>['required'],
-            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048|unique:beritas',
+            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048|unique:beritas',
             'isi' => 'required',
         ]);
 

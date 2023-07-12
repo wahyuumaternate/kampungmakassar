@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('struktur_organisasi', function (Blueprint $table) {
             $table->id();
-            $table->string('nama'); 
-            $table->string('jabatan'); 
             $table->string('gambar'); 
-            $table->string('slug'); 
             $table->timestamps();
         });
     }
