@@ -61,7 +61,7 @@
                     @endauth
                 @guest('masyarakat')
                     @guest('web')
-                        <li><a class="" href="{{ route('login') }}"><span class="btn text-light"
+                        <li><a class="" target="_blank" href="{{ route('login') }}"><span class="btn text-light"
                                     style="background-color:#1B6B93;">Login <svg xmlns="http://www.w3.org/2000/svg"
                                         width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
                                         viewBox="0 0 16 16">

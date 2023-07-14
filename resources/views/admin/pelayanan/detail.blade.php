@@ -28,7 +28,7 @@
               </div>
               <div class="col-md-5">
                 <a class="text-light btn btn-primary m-1" href="mailto:{{ $pelayanan->masyarakat->email }}"><i class="fe fe-mail fe-16"></i> Kirim Email</a>
-                <a class="text-light btn btn-success m-1" href="https://wa.me/+62{{ $pelayanan->masyarakat->no_hp }}"><i class="fe fe-phone fe-16"></i> Kirim WA</a>
+                <a class="text-light btn btn-success m-1" target="_blank" href="https://wa.me/+62{{ $pelayanan->masyarakat->no_hp }}"><i class="fe fe-phone fe-16"></i> Kirim WA</a>
               </div>
             </div>
           </div>
