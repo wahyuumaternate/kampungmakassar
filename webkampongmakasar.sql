@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jul 2023 pada 09.17
+-- Waktu pembuatan: 14 Jul 2023 pada 10.09
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -205,6 +205,14 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('admin@gmail.com', '$2y$10$p0er6LQHlwU7sPIpMcy2WOvFygSb3wi0FN0dbKicTOzKm0gfr7vBS', '2023-07-13 22:41:38'),
+('Kelmakassarbaratte@gmail.com', '$2y$10$aEmTuqtWz0Zv4dzv3RfJqe6Qp8cxyP1gJWLprW8Cr84nhpQKGifwS', '2023-07-13 22:32:52');
+
 -- --------------------------------------------------------
 
 --
@@ -292,13 +300,6 @@ CREATE TABLE `pengaduans` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `pengaduans`
---
-
-INSERT INTO `pengaduans` (`id`, `nama`, `nik`, `email`, `jenis_pengaduan`, `deskripsi`, `lampiran`, `aprove`, `terkirim`, `created_at`, `updated_at`) VALUES
-(1, 'WAHYU JIHAD UMATERNATE', '8272016912690001', 'retmu@gmail.com', 'Pelayanan Public/Masyarakat', 'jj', 'lampiranPengaduan/QsFVWs4SQTDltdnLmUZCv7Bwl0d7CZFEytO67aNJ.pdf', 0, 0, '2023-07-12 09:43:10', '2023-07-12 09:43:10');
 
 -- --------------------------------------------------------
 
@@ -482,7 +483,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role_id`) VALUES
-(1, 'Retmu', 'admin@gmail.com', '2023-07-11 22:32:54', '$2y$10$mJS79mAyYcYs0HTq3EAC3Owi6du.xgCz.Hra1Zhnzw2ZZ3gNUQlQe', 'aQYbaLrgu1a89uqLajbKtonb3btL6UpRMJH49hk0EqVmWMyJC3uMSaoqwVqk', '2023-07-11 22:32:54', '2023-07-13 21:45:00', 1),
+(1, 'Retmu', 'admin@gmail.com', '2023-07-11 22:32:54', '$2y$10$mJS79mAyYcYs0HTq3EAC3Owi6du.xgCz.Hra1Zhnzw2ZZ3gNUQlQe', 'OyxuGTlKnlAnZWrZMm30dkg3RQzDWzSTsOJJORZt9e3fMLgO9qwdjPjrYUsZ', '2023-07-11 22:32:54', '2023-07-13 21:45:00', 1),
 (6, 'Lurah', 'Kelmakassarbaratte@gmail.com', NULL, '$2y$10$MUdSmK0ddrbFdbfEGCAIJuX.o7PLfVCvIFzLbWuceyBk796BOQmc2', NULL, '2023-07-13 22:04:13', '2023-07-13 22:04:13', 2);
 
 -- --------------------------------------------------------
