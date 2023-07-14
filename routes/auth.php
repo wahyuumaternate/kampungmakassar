@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+  
+});
+Route::middleware(['auth','is_lurah'])->group(function () {
 
     Route::get('tambah-user', [RegisteredUserController::class, 'create'])
                 ->name('register');

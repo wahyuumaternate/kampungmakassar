@@ -85,7 +85,7 @@
                                                             @csrf
                                                             @method('delete')
                                                             <button class="btn btn-danger dropdown-item"
-                                                                onclick="return confirm('anda yakin ingin menghapus berita ini secara permanen?');event.preventDefault();
+                                                                onclick="return confirm('anda yakin ingin menghapus pengaduan ini secara permanen?');event.preventDefault();
                                                                 "><i
                                                                     class="fe fe-trash-2"></i> Hapus</button>
                                                         </form>

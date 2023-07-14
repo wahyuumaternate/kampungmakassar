@@ -136,10 +136,12 @@
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="pelayanan">
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="{{ route('pelayanan.index') }}"><span class="ml-1 item-text">Pelayanan Masuk</span></a>
+                            <a class="nav-link pl-3" href="{{ route('pelayanan.index') }}"><span
+                                    class="ml-1 item-text">Pelayanan Masuk</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="{{ route('jenis_pelayanan.index') }}"><span class="ml-1 item-text">Jenis Pelayanan</span></a>
+                            <a class="nav-link pl-3" href="{{ route('jenis_pelayanan.index') }}"><span
+                                    class="ml-1 item-text">Jenis Pelayanan</span></a>
                         </li>
                     </ul>
                 </li>
@@ -164,11 +166,15 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="user">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('pelayanan.index') }}"><span class="ml-1 item-text">Profil User</span></a>
+                        <a class="nav-link pl-3" href="{{ route('profile.edit') }}"><span
+                                class="ml-1 item-text">Profil User</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('jenis_pelayanan.index') }}"><span class="ml-1 item-text">Tambah User</span></a>
-                    </li>
+                    @can('isLurah')
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="{{ route('register') }}"><span class="ml-1 item-text">Tambah
+                                    User</span></a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
         </ul>
